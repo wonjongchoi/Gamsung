@@ -1,0 +1,517 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E4F4C73F1DC8643C00CD41AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F4C73E1DC8643C00CD41AF /* AppDelegate.swift */; };
+		E4F4C7411DC8643C00CD41AF /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F4C7401DC8643C00CD41AF /* FirstViewController.swift */; };
+		E4F4C7431DC8643C00CD41AF /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F4C7421DC8643C00CD41AF /* SecondViewController.swift */; };
+		E4F4C7461DC8643C00CD41AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4F4C7441DC8643C00CD41AF /* Main.storyboard */; };
+		E4F4C7481DC8643C00CD41AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4F4C7471DC8643C00CD41AF /* Assets.xcassets */; };
+		E4F4C74B1DC8643C00CD41AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4F4C7491DC8643C00CD41AF /* LaunchScreen.storyboard */; };
+		E4F4C7561DC8643C00CD41AF /* EmoDiaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F4C7551DC8643C00CD41AF /* EmoDiaryTests.swift */; };
+		E4F4C7611DC8643C00CD41AF /* EmoDiaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F4C7601DC8643C00CD41AF /* EmoDiaryUITests.swift */; };
+		E4F4C76F1DC8648400CD41AF /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F4C76E1DC8648400CD41AF /* Journal.swift */; };
+		E4F4C7701DC8648400CD41AF /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F4C76E1DC8648400CD41AF /* Journal.swift */; };
+		E4F4C7711DC8648400CD41AF /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F4C76E1DC8648400CD41AF /* Journal.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E4F4C7521DC8643C00CD41AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4F4C7331DC8643C00CD41AF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E4F4C73A1DC8643C00CD41AF;
+			remoteInfo = EmoDiary;
+		};
+		E4F4C75D1DC8643C00CD41AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4F4C7331DC8643C00CD41AF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E4F4C73A1DC8643C00CD41AF;
+			remoteInfo = EmoDiary;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E4F4C73B1DC8643C00CD41AF /* EmoDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmoDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4F4C73E1DC8643C00CD41AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E4F4C7401DC8643C00CD41AF /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		E4F4C7421DC8643C00CD41AF /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		E4F4C7451DC8643C00CD41AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E4F4C7471DC8643C00CD41AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E4F4C74A1DC8643C00CD41AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E4F4C74C1DC8643C00CD41AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4F4C7511DC8643C00CD41AF /* EmoDiaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmoDiaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4F4C7551DC8643C00CD41AF /* EmoDiaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoDiaryTests.swift; sourceTree = "<group>"; };
+		E4F4C7571DC8643C00CD41AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4F4C75C1DC8643C00CD41AF /* EmoDiaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmoDiaryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4F4C7601DC8643C00CD41AF /* EmoDiaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoDiaryUITests.swift; sourceTree = "<group>"; };
+		E4F4C7621DC8643C00CD41AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4F4C76E1DC8648400CD41AF /* Journal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E4F4C7381DC8643C00CD41AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4F4C74E1DC8643C00CD41AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4F4C7591DC8643C00CD41AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E4F4C7321DC8643C00CD41AF = {
+			isa = PBXGroup;
+			children = (
+				E4F4C73D1DC8643C00CD41AF /* EmoDiary */,
+				E4F4C7541DC8643C00CD41AF /* EmoDiaryTests */,
+				E4F4C75F1DC8643C00CD41AF /* EmoDiaryUITests */,
+				E4F4C73C1DC8643C00CD41AF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E4F4C73C1DC8643C00CD41AF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E4F4C73B1DC8643C00CD41AF /* EmoDiary.app */,
+				E4F4C7511DC8643C00CD41AF /* EmoDiaryTests.xctest */,
+				E4F4C75C1DC8643C00CD41AF /* EmoDiaryUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E4F4C73D1DC8643C00CD41AF /* EmoDiary */ = {
+			isa = PBXGroup;
+			children = (
+				E4F4C73E1DC8643C00CD41AF /* AppDelegate.swift */,
+				E4F4C7401DC8643C00CD41AF /* FirstViewController.swift */,
+				E4F4C7421DC8643C00CD41AF /* SecondViewController.swift */,
+				E4F4C7441DC8643C00CD41AF /* Main.storyboard */,
+				E4F4C7471DC8643C00CD41AF /* Assets.xcassets */,
+				E4F4C7491DC8643C00CD41AF /* LaunchScreen.storyboard */,
+				E4F4C74C1DC8643C00CD41AF /* Info.plist */,
+				E4F4C76E1DC8648400CD41AF /* Journal.swift */,
+			);
+			path = EmoDiary;
+			sourceTree = "<group>";
+		};
+		E4F4C7541DC8643C00CD41AF /* EmoDiaryTests */ = {
+			isa = PBXGroup;
+			children = (
+				E4F4C7551DC8643C00CD41AF /* EmoDiaryTests.swift */,
+				E4F4C7571DC8643C00CD41AF /* Info.plist */,
+			);
+			path = EmoDiaryTests;
+			sourceTree = "<group>";
+		};
+		E4F4C75F1DC8643C00CD41AF /* EmoDiaryUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E4F4C7601DC8643C00CD41AF /* EmoDiaryUITests.swift */,
+				E4F4C7621DC8643C00CD41AF /* Info.plist */,
+			);
+			path = EmoDiaryUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E4F4C73A1DC8643C00CD41AF /* EmoDiary */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4F4C7651DC8643C00CD41AF /* Build configuration list for PBXNativeTarget "EmoDiary" */;
+			buildPhases = (
+				E4F4C7371DC8643C00CD41AF /* Sources */,
+				E4F4C7381DC8643C00CD41AF /* Frameworks */,
+				E4F4C7391DC8643C00CD41AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EmoDiary;
+			productName = EmoDiary;
+			productReference = E4F4C73B1DC8643C00CD41AF /* EmoDiary.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E4F4C7501DC8643C00CD41AF /* EmoDiaryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4F4C7681DC8643C00CD41AF /* Build configuration list for PBXNativeTarget "EmoDiaryTests" */;
+			buildPhases = (
+				E4F4C74D1DC8643C00CD41AF /* Sources */,
+				E4F4C74E1DC8643C00CD41AF /* Frameworks */,
+				E4F4C74F1DC8643C00CD41AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E4F4C7531DC8643C00CD41AF /* PBXTargetDependency */,
+			);
+			name = EmoDiaryTests;
+			productName = EmoDiaryTests;
+			productReference = E4F4C7511DC8643C00CD41AF /* EmoDiaryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E4F4C75B1DC8643C00CD41AF /* EmoDiaryUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4F4C76B1DC8643C00CD41AF /* Build configuration list for PBXNativeTarget "EmoDiaryUITests" */;
+			buildPhases = (
+				E4F4C7581DC8643C00CD41AF /* Sources */,
+				E4F4C7591DC8643C00CD41AF /* Frameworks */,
+				E4F4C75A1DC8643C00CD41AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E4F4C75E1DC8643C00CD41AF /* PBXTargetDependency */,
+			);
+			name = EmoDiaryUITests;
+			productName = EmoDiaryUITests;
+			productReference = E4F4C75C1DC8643C00CD41AF /* EmoDiaryUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E4F4C7331DC8643C00CD41AF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = gamsung;
+				TargetAttributes = {
+					E4F4C73A1DC8643C00CD41AF = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					E4F4C7501DC8643C00CD41AF = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = E4F4C73A1DC8643C00CD41AF;
+					};
+					E4F4C75B1DC8643C00CD41AF = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = E4F4C73A1DC8643C00CD41AF;
+					};
+				};
+			};
+			buildConfigurationList = E4F4C7361DC8643C00CD41AF /* Build configuration list for PBXProject "EmoDiary" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E4F4C7321DC8643C00CD41AF;
+			productRefGroup = E4F4C73C1DC8643C00CD41AF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E4F4C73A1DC8643C00CD41AF /* EmoDiary */,
+				E4F4C7501DC8643C00CD41AF /* EmoDiaryTests */,
+				E4F4C75B1DC8643C00CD41AF /* EmoDiaryUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E4F4C7391DC8643C00CD41AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4F4C74B1DC8643C00CD41AF /* LaunchScreen.storyboard in Resources */,
+				E4F4C7481DC8643C00CD41AF /* Assets.xcassets in Resources */,
+				E4F4C7461DC8643C00CD41AF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4F4C74F1DC8643C00CD41AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4F4C75A1DC8643C00CD41AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E4F4C7371DC8643C00CD41AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4F4C7431DC8643C00CD41AF /* SecondViewController.swift in Sources */,
+				E4F4C73F1DC8643C00CD41AF /* AppDelegate.swift in Sources */,
+				E4F4C7411DC8643C00CD41AF /* FirstViewController.swift in Sources */,
+				E4F4C76F1DC8648400CD41AF /* Journal.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4F4C74D1DC8643C00CD41AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4F4C7561DC8643C00CD41AF /* EmoDiaryTests.swift in Sources */,
+				E4F4C7701DC8648400CD41AF /* Journal.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4F4C7581DC8643C00CD41AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4F4C7611DC8643C00CD41AF /* EmoDiaryUITests.swift in Sources */,
+				E4F4C7711DC8648400CD41AF /* Journal.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E4F4C7531DC8643C00CD41AF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E4F4C73A1DC8643C00CD41AF /* EmoDiary */;
+			targetProxy = E4F4C7521DC8643C00CD41AF /* PBXContainerItemProxy */;
+		};
+		E4F4C75E1DC8643C00CD41AF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E4F4C73A1DC8643C00CD41AF /* EmoDiary */;
+			targetProxy = E4F4C75D1DC8643C00CD41AF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E4F4C7441DC8643C00CD41AF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4F4C7451DC8643C00CD41AF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E4F4C7491DC8643C00CD41AF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4F4C74A1DC8643C00CD41AF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E4F4C7631DC8643C00CD41AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E4F4C7641DC8643C00CD41AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E4F4C7661DC8643C00CD41AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = EmoDiary/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gamsung.EmoDiary;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E4F4C7671DC8643C00CD41AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = EmoDiary/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gamsung.EmoDiary;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E4F4C7691DC8643C00CD41AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = EmoDiaryTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gamsung.EmoDiaryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EmoDiary.app/EmoDiary";
+			};
+			name = Debug;
+		};
+		E4F4C76A1DC8643C00CD41AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = EmoDiaryTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gamsung.EmoDiaryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EmoDiary.app/EmoDiary";
+			};
+			name = Release;
+		};
+		E4F4C76C1DC8643C00CD41AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = EmoDiaryUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gamsung.EmoDiaryUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = EmoDiary;
+			};
+			name = Debug;
+		};
+		E4F4C76D1DC8643C00CD41AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = EmoDiaryUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gamsung.EmoDiaryUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = EmoDiary;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E4F4C7361DC8643C00CD41AF /* Build configuration list for PBXProject "EmoDiary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4F4C7631DC8643C00CD41AF /* Debug */,
+				E4F4C7641DC8643C00CD41AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4F4C7651DC8643C00CD41AF /* Build configuration list for PBXNativeTarget "EmoDiary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4F4C7661DC8643C00CD41AF /* Debug */,
+				E4F4C7671DC8643C00CD41AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E4F4C7681DC8643C00CD41AF /* Build configuration list for PBXNativeTarget "EmoDiaryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4F4C7691DC8643C00CD41AF /* Debug */,
+				E4F4C76A1DC8643C00CD41AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E4F4C76B1DC8643C00CD41AF /* Build configuration list for PBXNativeTarget "EmoDiaryUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4F4C76C1DC8643C00CD41AF /* Debug */,
+				E4F4C76D1DC8643C00CD41AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E4F4C7331DC8643C00CD41AF /* Project object */;
+}
