@@ -47,12 +47,12 @@ let emoArray = [
 ]
 
 class Journal {
-    var ctime:Date
+    var ctime:NSDate
     var memo:String
     var emotion:Emotion
     
     init(memo:String, emotion:Emotion){
-        self.ctime = Date()
+        self.ctime = NSDate()
         self.memo = memo
         self.emotion = emotion
     }
