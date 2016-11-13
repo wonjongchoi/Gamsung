@@ -43,7 +43,7 @@
                             <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Timeline" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Timeline" image="timeline" id="acW-dT-cKf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -280,7 +280,7 @@
     </scenes>
     <resources>
         <image name="calendar" width="24" height="24"/>
-        <image name="first" width="30" height="30"/>
         <image name="statistics" width="24" height="24"/>
+        <image name="timeline" width="24" height="24"/>
     </resources>
 </document>
