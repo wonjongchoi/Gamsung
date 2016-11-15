@@ -1,0 +1,5 @@
+github "WenchaoD/FSCalendar", "2.5.1", :files => "FSCalendar/*.{h,m,mm,swift}"
+
+target :EmoDiary do
+	github "WenchaoD/FSCalendar", "2.5.1", :files => "FSCalendar/*.{h,m,mm,swift}"
+end
