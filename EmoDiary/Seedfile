@@ -1,5 +1,7 @@
 github "WenchaoD/FSCalendar", "2.5.1", :files => "FSCalendar/*.{h,m,mm,swift}"
+github "danielgindi/Charts", "v3.0.1", :files => "Source/*"
 
 target :EmoDiary do
 	github "WenchaoD/FSCalendar", "2.5.1", :files => "FSCalendar/*.{h,m,mm,swift}"
+	github "danielgindi/Charts", "v3.0.1", :files => "Source/*"
 end
