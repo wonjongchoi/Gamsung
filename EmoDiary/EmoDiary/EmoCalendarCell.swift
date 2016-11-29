@@ -44,6 +44,10 @@ class EmoCalendarCell: FSCalendarCell {
         view.backgroundColor = UIColor.lightGray.withAlphaComponent(0.12)
         self.backgroundView = view;
         
+//        self.appearance.event
+        
+        preferredEventDefaultColors = [UIColor.black, UIColor.white]
+        
     }
     
     override func layoutSubviews() {
@@ -53,4 +57,7 @@ class EmoCalendarCell: FSCalendarCell {
         self.selectionLayer.frame = self.contentView.bounds.insetBy(dx: -1, dy: 0)
     }
 
+//    override func invalidateEventColors() {
+//        <#code#>
+//    }
 }

@@ -18,6 +18,7 @@ class TimelineTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.sㄴ
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+//        tableView.rowHeight = UITableViewAutomaticDimension
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,14 +57,6 @@ class TimelineTableViewController: UITableViewController {
         let ctime = journal[row].ctime
         let dateFormatter = DateFormatter()
         
-        if (row != 0 && cal.dateComponents([Calendar.Component.day], from: ctime, to: journal[row - 1].ctime).day == 0) {
-            cell.dateLabel.isHidden = true
-        } else {
-            dateFormatter.dateFormat = "yyyy-MM-dd"
-            cell.dateLabel.text = dateFormatter.string(from: ctime)
-            cell.dateLabel.isHidden = false
-        }
-        
         cell.memoLabel.text = journal[row].memo
         
         dateFormatter.dateFormat = "a HH:mm"
@@ -75,9 +68,29 @@ class TimelineTableViewController: UITableViewController {
         let emotion = journal[row].emotion
         cell.emotionColor.backgroundColor = hexStringToUIColor(hex: (emoArray[emotion]?.resource)!)
         
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        cell.memoLabel.frame = CGRect(x : 20, y : 0, width: cell.memoLabel.frame.width, height : cell.memoLabel.frame.height) //.frame = CGRectMake(0,0,100,100)
+        
+        cell.memoLabel.layoutMargins.left = 20
+        cell.memoLabel.layoutMargins.right = 20
+        cell.timeLabel.layoutMargins.left = 20
+        cell.timeLabel.layoutMargins.right = 20
+        
+        if (row != 0 && cal.dateComponents([Calendar.Component.day], from: ctime) == cal.dateComponents([Calendar.Component.day], from: journal[row - 1].ctime)) {
+            cell.dateLabel.text = dateFormatter.string(from: ctime)
+            cell.dateLabel.isHidden = true
+        } else {
+            cell.dateLabel.text = dateFormatter.string(from: ctime)
+            cell.dateLabel.isHidden = false
+        }
+        
         return cell
     }
     
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
 
     /*
     // Override to support conditional editing of the table view.

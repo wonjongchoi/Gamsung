@@ -58,6 +58,18 @@ class Journal {
     }
 }
 
+func getJournalOfDate(date: Date) -> Array<Journal> {
+    let cal = Calendar(identifier:Calendar.Identifier.gregorian)
+    
+    return journal.filter({ (j: Journal) -> (Bool) in
+        if (cal.dateComponents([Calendar.Component.day], from: j.ctime) == cal.dateComponents([Calendar.Component.day], from: date)) {
+            return true
+        } else {
+            return false
+        }
+    })
+}
+
 func hexStringToUIColor (hex:String) -> UIColor {
     var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
     
