@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -31,11 +31,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Timeline" image="timeline" id="acW-dT-cKf"/>
+                    <navigationItem key="navigationItem" id="MLe-HU-IO6"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-540" y="-1408.2458770614694"/>
+            <point key="canvasLocation" x="399.19999999999999" y="-1408.2458770614694"/>
         </scene>
         <!--Timeline Table View Controller-->
         <scene sceneID="9RM-df-XBS">
@@ -160,11 +160,11 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Calendar" image="calendar" id="cPa-gy-q4n"/>
+                    <navigationItem key="navigationItem" id="Zv6-VN-0QR"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-540" y="-708.39580209895053"/>
+            <point key="canvasLocation" x="399.19999999999999" y="-708.39580209895053"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="upJ-Qn-i8t">
@@ -277,7 +277,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RXO-RY-grJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="lJf-pY-ocD" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1049" y="-708"/>
+            <point key="canvasLocation" x="1988" y="-708.39580209895053"/>
         </scene>
         <!--Statistics-->
         <scene sceneID="IWw-rh-zCE">
@@ -319,8 +319,8 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="aCA-fA-eLf" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="cw7-vr-L5d" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="KPV-1j-XIt" kind="relationship" relationship="viewControllers" id="4VD-U8-7tO"/>
                     </connections>
                 </tabBarController>
@@ -344,7 +344,45 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LTe-2R-kLw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="316" y="-708"/>
+            <point key="canvasLocation" x="1255.2" y="-708.39580209895053"/>
+        </scene>
+        <!--Calendar-->
+        <scene sceneID="R16-hx-vHv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cw7-vr-L5d" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Calendar" image="calendar" id="cPa-gy-q4n"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XKA-us-6vI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="vIc-dR-6v3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QKZ-xj-rGe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-540" y="-708.39580209895053"/>
+        </scene>
+        <!--Timeline-->
+        <scene sceneID="vra-sv-IK5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aCA-fA-eLf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Timeline" image="timeline" id="acW-dT-cKf"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="b7y-37-9sd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="4GV-kv-hFs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="foj-E9-ktv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-540" y="-1408.2458770614694"/>
         </scene>
     </scenes>
     <resources>

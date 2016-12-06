@@ -29,6 +29,15 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.title = "Calendar"
+
+        let createButton = UIBarButtonItem(image: UIImage(named: "create"), style: .plain, target: self, action: #selector(getter: UIDynamicBehavior.action))
+        navigationItem.rightBarButtonItem = createButton
+        
+        let todayButton = UIBarButtonItem(image: UIImage(named: "today"), style: .plain, target: self, action: #selector(getter: UIDynamicBehavior.action))
+        navigationItem.leftBarButtonItem = todayButton
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 

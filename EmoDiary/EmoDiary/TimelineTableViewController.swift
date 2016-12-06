@@ -12,6 +12,9 @@ class TimelineTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        //self.tabBarController?.navigationItem.leftBarButtonItem = settingsButton
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -20,6 +23,7 @@ class TimelineTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
 //        tableView.rowHeight = UITableViewAutomaticDimension
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

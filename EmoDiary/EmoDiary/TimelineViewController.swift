@@ -13,6 +13,10 @@ class TimelineViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationItem.title = "Timeline"
+        
+        let createButton = UIBarButtonItem(image: UIImage(named: "create"), style: .plain, target: self, action: #selector(getter: UIDynamicBehavior.action))
+                navigationItem.rightBarButtonItem = createButton
         // Do any additional setup after loading the view.
     }
 
