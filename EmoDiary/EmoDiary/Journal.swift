@@ -8,17 +8,17 @@
 
 import Foundation
 
-enum EmotionIndex {
-    case happy
-    case love
-    case relieved
-    case fun
-    case anger
-    case sad
-    case lonely
-    case shame
-    case calm
-    case feelingless
+enum EmotionIndex: Int {
+    case happy = 0
+    case love = 1
+    case relieved = 2
+    case fun = 3
+    case anger = 4
+    case sad = 5
+    case lonely = 6
+    case shame = 7
+    case calm = 8
+    case feelingless = 9
 }
 
 struct Emotion {
@@ -47,51 +47,18 @@ var emoArray:Dictionary<EmotionIndex, Emotion> = [
 ]
 
 class Journal {
+    var jid:Int
     var ctime:Date
     var memo:String
     var emotion:EmotionIndex
     
-    init(ctime: Date, memo: String, emotion: EmotionIndex){
+    init(jid:Int, ctime: Date, memo: String, emotion: EmotionIndex){
+        self.jid = jid
         self.ctime = ctime
         self.memo = memo
         self.emotion = emotion
     }
 }
-
-func getJournalOfDate(date: Date) -> Array<Journal> {
-    let cal = Calendar(identifier:Calendar.Identifier.gregorian)
-    
-    return journal.filter({ (j: Journal) -> (Bool) in
-        if (cal.dateComponents([Calendar.Component.day], from: j.ctime) == cal.dateComponents([Calendar.Component.day], from: date)) {
-            return true
-        } else {
-            return false
-        }
-    })
-}
-
-func hexStringToUIColor (hex:String) -> UIColor {
-    var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
-    
-    if (cString.hasPrefix("#")) {
-        cString.remove(at: cString.startIndex)
-    }
-    
-    if ((cString.characters.count) != 6) {
-        return UIColor.gray
-    }
-    
-    var rgbValue:UInt32 = 0
-    Scanner(string: cString).scanHexInt32(&rgbValue)
-    
-    return UIColor(
-        red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
-        green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
-        blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
-        alpha: CGFloat(1.0)
-    )
-}
-
 
 
 

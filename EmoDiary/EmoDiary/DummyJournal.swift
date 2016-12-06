@@ -16,9 +16,9 @@ func getFormatter() -> DateFormatter {
 }
 
 var journal:Array<Journal> = [
-    Journal(ctime: getFormatter().date(from: "2016-11-27 12:00")!, memo: "찬현오빠 결혼식!", emotion: EmotionIndex.happy),
-    Journal(ctime: getFormatter().date(from: "2016-11-27 15:00")!, memo: "융소... 자살한다....", emotion: EmotionIndex.shame),
-    Journal(ctime: getFormatter().date(from: "2016-11-28 18:00")!, memo: "병원가야징", emotion: EmotionIndex.sad),
-    Journal(ctime: getFormatter().date(from: "2016-11-29 15:00")!, memo: "화난다 이벤트 외않됀데...", emotion: EmotionIndex.anger),
-    Journal(ctime: getFormatter().date(from: "2016-11-29 16:00")!, memo: "이벤트 색 바뀜!!!", emotion: EmotionIndex.love)
+    Journal(jid: 0, ctime: getFormatter().date(from: "2016-11-27 12:00")!, memo: "찬현오빠 결혼식!", emotion: EmotionIndex.happy),
+    Journal(jid: 1, ctime: getFormatter().date(from: "2016-11-27 15:00")!, memo: "융소... 자살한다....", emotion: EmotionIndex.shame),
+    Journal(jid: 2, ctime: getFormatter().date(from: "2016-11-28 18:00")!, memo: "병원가야징", emotion: EmotionIndex.sad),
+    Journal(jid: 3, ctime: getFormatter().date(from: "2016-11-29 15:00")!, memo: "화난다 이벤트 외않됀데...", emotion: EmotionIndex.anger),
+    Journal(jid: 4, ctime: getFormatter().date(from: "2016-11-29 16:00")!, memo: "이벤트 색 바뀜!!!", emotion: EmotionIndex.love)
 ]
