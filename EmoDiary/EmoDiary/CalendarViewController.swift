@@ -73,7 +73,8 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
 //        calendar.today = nil // Hide the today circle
         calendar.register(FSCalendarCell.self, forCellReuseIdentifier: "cell")
         calendar.appearance.todayColor = UIColor.orange
-        calendar.appearance.headerDateFormat = "yyyy / MM";
+        calendar.appearance.headerDateFormat = "yyyy MMMM";
+        calendar.appearance.headerMinimumDissolvedAlpha = 0.0;  //hide prev/next month
         
 //        calendar.appearance.eventDefaultColor = hexStringToUIColor(hex: emoArray[EmotionIndex.calm]!.resource)
         
@@ -129,7 +130,7 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
     
     func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
         self.calendar.frame.size.height = bounds.height
-        self.eventLabel.frame.origin.y = calendar.frame.maxY + 10
+        //self.eventLabel.frame.origin.y = calendar.frame.maxY + 10
     }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date) {
