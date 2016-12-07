@@ -6,6 +6,7 @@
 //  Copyright © 2016년 gamsung. All rights reserved.
 //
 import UIKit
+//import Charts
 
 enum SelectionType : Int {
     case none
@@ -16,6 +17,7 @@ enum SelectionType : Int {
 }
 
 class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate {
+//    @IBOutlet weak var lineChartView: LineChartView!
     
     private let gregorian = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)!
     private let formatter: DateFormatter = {
@@ -37,6 +39,12 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
         
         let todayButton = UIBarButtonItem(image: UIImage(named: "today"), style: .plain, target: self, action: #selector(getter: UIDynamicBehavior.action))
         navigationItem.leftBarButtonItem = todayButton
+        
+        
+//        let DummyIndex = ["행복","사랑", "분노", "우울", "외로움", "자괴감", "침착"]
+//        let DummyEmo = [7.0, 8.0, 3.0, 2.0, 4.0, 1.0, 5.0]
+//        
+//        setChart(dataPoints: DummyIndex, values : DummyEmo)
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -230,6 +238,26 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
 //            }
 //        }
     }
+    
+//    func setChart(dataPoints: [String], values: [Double]) {
+//        
+//        var dataEntries: [ChartDataEntry] = Array()
+//        var linedataSet: ChartDataSet!
+//        
+//        for (i, value) in values.enumerated()
+//        {
+//            dataEntries.append(ChartDataEntry(x: Double(i), y: value))
+//        }
+//        
+//        linedataSet = LineChartDataSet(values: dataEntries, label: "Emotion Statistics")
+//        
+//        let linedata = LineChartData(dataSet: linedataSet)
+//        
+//        self.lineChartView.data = linedata
+//        
+//        linedataSet.colors = ChartColorTemplates.pastel()
+//        
+//    }
 
 }
 
