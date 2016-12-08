@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -344,7 +344,11 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Zv6-VN-0QR">
-                        <barButtonItem key="leftBarButtonItem" image="today" id="Oy5-J9-k9K"/>
+                        <barButtonItem key="leftBarButtonItem" image="today" id="Oy5-J9-k9K">
+                            <connections>
+                                <action selector="goToday:" destination="8rJ-Kc-sve" id="iKo-wF-XRz"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="create" id="dLM-5K-vdT">
                             <connections>
                                 <segue destination="5tx-X4-sjU" kind="show" id="6sI-mz-blc"/>

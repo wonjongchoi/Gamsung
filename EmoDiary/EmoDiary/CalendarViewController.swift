@@ -28,20 +28,16 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
     
     private var journal:Array<Journal> = []
     
+    @IBAction func goToday(_ sender: UIBarButtonItem) {
+        calendar.select(Date.init(), scrollToDate: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationItem.title = "Calendar"
-
-      /*  let createButton = UIBarButtonItem(image: UIImage(named: "create"), style: .plain, target: self, action: #selector(getter: UIDynamicBehavior.action))
-        navigationItem.rightBarButtonItem = createButton
-        
-        let todayButton = UIBarButtonItem(image: UIImage(named: "today"), style: .plain, target: self, action: #selector(getter: UIDynamicBehavior.action))
-        navigationItem.leftBarButtonItem = todayButton */
         
         self.tabBarController?.tabBar.isHidden = false
-        
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -79,7 +75,7 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
         calendar.today = nil // Hide the today circle
         calendar.register(FSCalendarCell.self, forCellReuseIdentifier: "cell")
         calendar.appearance.todayColor = UIColor.orange
-        calendar.appearance.borderSelectionColor = UIColor.black
+        calendar.appearance.borderSelectionColor = UIColor.orange
         calendar.appearance.selectionColor = UIColor.white
         calendar.appearance.titleSelectionColor = UIColor.black
         
@@ -168,9 +164,6 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
         diyCell.imageView.isHidden = !self.gregorian.isDateInToday(date as Date)
         
         diyCell.eventIndicator.color = calendar(calendar, appearance: calendar.appearance, eventDefaultColorsFor: date as Date)
-        
-//        diyCell.imageView.
-//        diyCell.eventIndicator.
         
 //        print(diyCell.eventIndicator.)
 //        diyCell.eventIndicator.color =
