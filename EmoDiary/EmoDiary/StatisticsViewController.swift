@@ -16,18 +16,10 @@ class StatisticsViewController: UIViewController {
         super.viewDidLoad()
         
         self.navigationItem.title = "Statistics"
-        
-       /* let settingsButton = UIBarButtonItem(image: UIImage(named: "settings"), style: .plain, target: self, action: #selector(getter: UIDynamicBehavior.action))
-        navigationItem.rightBarButtonItem = settingsButton */
 
         self.tabBarController?.tabBar.isHidden = false
         
         // Do any additional setup after loading the view.
-//        let ys1 = Array(1..<10).map { x in return Int(arc4random_uniform(6) + 1) }
-//        let ys2 = Array(1..<10).map { x in return Int(arc4random_uniform(6) + 1) }
-        
-//        let yse1 = [BarChartDataEntry(x: Double(0), y: Double(4))]//ys1.enumerated().map { x, y in return BarChartDataEntry(x: Double(x), y: Double(y)) }
-//        let yse2 = ys2.enumerated().map { x, y in return BarChartDataEntry(x: Double(x), y: y) }
         
         let data = BarChartData()
         let ds1 = BarChartDataSet(values: [BarChartDataEntry(x: Double(0), y: Double(4))], label: "A1")
@@ -43,9 +35,6 @@ class StatisticsViewController: UIViewController {
         data.addDataSet(ds3)
         data.addDataSet(ds4)
         
-//        let ds2 = BarChartDataSet(values: yse2, label: "World")
-//        ds2.colors = [UIColor.blue]
-//        data.addDataSet(ds2)
         self.barChartView.data = data
         
         self.barChartView.chartDescription?.text = "Barchart Demo"

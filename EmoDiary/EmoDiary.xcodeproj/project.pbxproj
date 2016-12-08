@@ -95,6 +95,12 @@
 		E4256AEB1DF88E1600B322D5 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4256AEA1DF88E1600B322D5 /* CreateViewController.swift */; };
 		E4256AEC1DF88E1600B322D5 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4256AEA1DF88E1600B322D5 /* CreateViewController.swift */; };
 		E4256AED1DF88E1600B322D5 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4256AEA1DF88E1600B322D5 /* CreateViewController.swift */; };
+		E4943E241DF9C392001C7728 /* ColorValueTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4943E231DF9C392001C7728 /* ColorValueTableController.swift */; };
+		E4943E251DF9C392001C7728 /* ColorValueTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4943E231DF9C392001C7728 /* ColorValueTableController.swift */; };
+		E4943E261DF9C392001C7728 /* ColorValueTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4943E231DF9C392001C7728 /* ColorValueTableController.swift */; };
+		E4BC6C2F1DF9D1E100F6C4F8 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BC6C2E1DF9D1E100F6C4F8 /* SettingViewController.swift */; };
+		E4BC6C301DF9D1E100F6C4F8 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BC6C2E1DF9D1E100F6C4F8 /* SettingViewController.swift */; };
+		E4BC6C311DF9D1E100F6C4F8 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BC6C2E1DF9D1E100F6C4F8 /* SettingViewController.swift */; };
 		E4F4C73F1DC8643C00CD41AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F4C73E1DC8643C00CD41AF /* AppDelegate.swift */; };
 		E4F4C7411DC8643C00CD41AF /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F4C7401DC8643C00CD41AF /* StatisticsViewController.swift */; };
 		E4F4C7431DC8643C00CD41AF /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F4C7421DC8643C00CD41AF /* CalendarViewController.swift */; };
@@ -289,6 +295,8 @@
 		E4256ABF1DF69F5000B322D5 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Seeds/Charts/Charts.xcodeproj; sourceTree = "<group>"; };
 		E4256ADD1DF74DBB00B322D5 /* AppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		E4256AEA1DF88E1600B322D5 /* CreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
+		E4943E231DF9C392001C7728 /* ColorValueTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorValueTableController.swift; sourceTree = "<group>"; };
+		E4BC6C2E1DF9D1E100F6C4F8 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		E4F4C73B1DC8643C00CD41AF /* EmoDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmoDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4F4C73E1DC8643C00CD41AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4F4C7401DC8643C00CD41AF /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
@@ -452,19 +460,21 @@
 				E4F4C7401DC8643C00CD41AF /* StatisticsViewController.swift */,
 				E4F4C7421DC8643C00CD41AF /* CalendarViewController.swift */,
 				E4F5DF061DD1A19100E9EA67 /* TimelineViewController.swift */,
+				E4256ABA1DF69F3A00B322D5 /* TimelineTableViewController.swift */,
 				E4256AEA1DF88E1600B322D5 /* CreateViewController.swift */,
+				E4943E231DF9C392001C7728 /* ColorValueTableController.swift */,
+				E4BC6C2E1DF9D1E100F6C4F8 /* SettingViewController.swift */,
 			);
 			name = BoardController;
 			sourceTree = "<group>";
 		};
-		E4256ADB1DF7383500B322D5 /* CustomView */ = {
+		E4256ADB1DF7383500B322D5 /* CellController */ = {
 			isa = PBXGroup;
 			children = (
 				E4256AB91DF69F3A00B322D5 /* TimelineTableViewCell.swift */,
-				E4256ABA1DF69F3A00B322D5 /* TimelineTableViewController.swift */,
 				E40494EC1DD760D7004AD1DF /* EmoCalendarCell.swift */,
 			);
-			name = CustomView;
+			name = CellController;
 			sourceTree = "<group>";
 		};
 		E4256ADC1DF7384D00B322D5 /* Support */ = {
@@ -501,7 +511,7 @@
 			isa = PBXGroup;
 			children = (
 				E4256ADC1DF7384D00B322D5 /* Support */,
-				E4256ADB1DF7383500B322D5 /* CustomView */,
+				E4256ADB1DF7383500B322D5 /* CellController */,
 				E4256ADA1DF7381500B322D5 /* BoardController */,
 				E4256AD91DF7380500B322D5 /* Data */,
 				E4F4C73E1DC8643C00CD41AF /* AppDelegate.swift */,
@@ -786,9 +796,11 @@
 				F4A925FD4919C79F50E7F989 /* FSCalendarStickyHeader.m in Sources */,
 				1F5F4A0E7C2E241AA2394665 /* FSCalendarScopeHandle.m in Sources */,
 				5510340F17089673891E0EDE /* FSCalendarHeaderView.m in Sources */,
+				E4BC6C2F1DF9D1E100F6C4F8 /* SettingViewController.swift in Sources */,
 				92682FD93C55E2CEA782A384 /* FSCalendarExtensions.m in Sources */,
 				E4256ADE1DF74DBB00B322D5 /* AppManager.swift in Sources */,
 				2E437DB50A4137F2CA90E996 /* FSCalendarDelegateProxy.m in Sources */,
+				E4943E241DF9C392001C7728 /* ColorValueTableController.swift in Sources */,
 				80F58A4ECFFF76603E377F51 /* FSCalendarConstants.m in Sources */,
 				1F1AA8F34A7AEF77A99CFB2A /* FSCalendarCollectionViewLayout.m in Sources */,
 				1C84A76BB4B78F32EA894DAA /* FSCalendarCollectionView.m in Sources */,
@@ -822,6 +834,7 @@
 				D123770688D3F87355BB40BD /* FSCalendarScopeHandle.m in Sources */,
 				78B5B683227E1FFD1F04AF91 /* FSCalendarHeaderView.m in Sources */,
 				7DD2783B3586EEDF82E62C2E /* FSCalendarExtensions.m in Sources */,
+				E4943E251DF9C392001C7728 /* ColorValueTableController.swift in Sources */,
 				EEBB3C23333263C74F6DEF59 /* FSCalendarDelegateProxy.m in Sources */,
 				F06D7D8C34A5C5023458C2F3 /* FSCalendarConstants.m in Sources */,
 				CA5C42B0EB53F1FD9173407E /* FSCalendarCollectionViewLayout.m in Sources */,
@@ -833,6 +846,7 @@
 				B32ABF4876F1FB9CDF344F69 /* FSCalendarAnimator.m in Sources */,
 				E80CCB8F93718055A4779A43 /* FSCalendar.m in Sources */,
 				2D2F7AF04C1B694DD41DE25D /* FSCalendar+Deprecated.m in Sources */,
+				E4BC6C301DF9D1E100F6C4F8 /* SettingViewController.swift in Sources */,
 				E40494EE1DD760D7004AD1DF /* EmoCalendarCell.swift in Sources */,
 				E4F4C7561DC8643C00CD41AF /* EmoDiaryTests.swift in Sources */,
 				E4F4C7701DC8648400CD41AF /* Journal.swift in Sources */,
@@ -850,6 +864,7 @@
 				F95DAE1A3B5410DA23B3B7F9 /* FSCalendarScopeHandle.m in Sources */,
 				9A0CE15A785ECE33B5F57A6F /* FSCalendarHeaderView.m in Sources */,
 				FEBCF4F8C400D6D5A4E4DB62 /* FSCalendarExtensions.m in Sources */,
+				E4943E261DF9C392001C7728 /* ColorValueTableController.swift in Sources */,
 				3DBEC3E7771AE9A80D34E84B /* FSCalendarDelegateProxy.m in Sources */,
 				622477080A469F188C26CBB3 /* FSCalendarConstants.m in Sources */,
 				49DAE0079FA14153C14BB84C /* FSCalendarCollectionViewLayout.m in Sources */,
@@ -861,6 +876,7 @@
 				E6F2A9A1F2CDC2ABA3DD3C30 /* FSCalendarAnimator.m in Sources */,
 				33C356F26714306D253AA817 /* FSCalendar.m in Sources */,
 				8C9BEFA8705F5B5392B7DF92 /* FSCalendar+Deprecated.m in Sources */,
+				E4BC6C311DF9D1E100F6C4F8 /* SettingViewController.swift in Sources */,
 				E40494EF1DD760D7004AD1DF /* EmoCalendarCell.swift in Sources */,
 				E4F4C7611DC8643C00CD41AF /* EmoDiaryUITests.swift in Sources */,
 				E4F4C7711DC8648400CD41AF /* Journal.swift in Sources */,
