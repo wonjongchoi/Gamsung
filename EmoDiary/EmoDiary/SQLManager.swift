@@ -48,7 +48,12 @@ func insertJournal(nJournal: Journal) {
     if (journalDB?.open())! {
         print("INSERT Memo : \(nJournal.memo) | EmoIndex : \(nJournal.emotion)")
         // SQL에 데이터를 입력하기 전 바로 입력하게 되면 "Optional('')"와 같은 문자열이 text문자열을 감싸게 되므로 뒤에 !을 붙여 옵셔널이 되지 않도록 한다.
-        let insertSQL = "INSERT INTO JOURNAL (memo, emo_index, ctime) VALUES ('\(nJournal.memo)', '\(nJournal.emotion.rawValue)', '\(nJournal.ctime)')"
+        
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateFormat = "YYYY-MM-dd HH:mm"
+        
+        let insertSQL = "INSERT INTO JOURNAL (memo, emo_index, ctime) VALUES ('\(nJournal.memo)', \(nJournal.emotion.rawValue), DATETIME('\(dateFormatter.string(from: nJournal.ctime.time))'))"
         print("[Save to DB] SQL to Insert => \(insertSQL)")
         
         let result = journalDB?.executeUpdate(insertSQL, withArgumentsIn: nil)
@@ -59,6 +64,8 @@ func insertJournal(nJournal: Journal) {
             // DB 저장 완료 후 journal에 추가
             journal.append(nJournal)
         }
+        
+        journalDB?.close()
     } else {
         print("journal.db Open Error : \(journalDB?.lastErrorMessage())")
     }
@@ -72,13 +79,18 @@ func selectAllJournal() -> Array<Journal> {
     if (journalDB?.open())! {
         print("SELECT ALL TUPLES FROM JOURNAL")
         
-        let selectSQL = "SELECT * FROM JOURNAL ORDER BY ctime DESC"
+        let selectSQL = "SELECT jid, ctime, memo, emo_index FROM JOURNAL ORDER BY ctime DESC LIMIT 20"
         
         let result:FMResultSet = (journalDB?.executeQuery(selectSQL, withArgumentsIn: nil))!
         
-        if result.next() {
+        while result.next() {
+            
             resultArr.append(Journal(jid: Int(result.int(forColumn: "jid")), ctime: result.date(forColumn: "ctime"), memo: result.string(forColumn: "memo"), emotion: EmotionIndex(rawValue: Int(result.int(forColumn: "emo_index")))!))
+            
+            print("ctime : \(result.date(forColumn: "ctime"))")
         }
+        
+        journalDB?.close()
     } else {
         print("journal.db Open Error : \(journalDB?.lastErrorMessage())")
     }

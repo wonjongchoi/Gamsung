@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -31,11 +31,182 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="MLe-HU-IO6"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="MLe-HU-IO6">
+                        <barButtonItem key="rightBarButtonItem" image="create" id="Tq8-Nj-Xwf" userLabel="Create Button">
+                            <connections>
+                                <segue destination="5tx-X4-sjU" kind="show" id="f8y-9X-IRz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="399.19999999999999" y="-1408.2458770614694"/>
+        </scene>
+        <!--Create View Controller-->
+        <scene sceneID="mOE-3d-hNp">
+            <objects>
+                <viewController id="5tx-X4-sjU" customClass="CreateViewController" customModule="EmoDiary" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lqI-OB-9dK"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cvn-gz-h1G"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="g19-fV-f1t">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="center" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mQB-71-x52">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="232"/>
+                                <subviews>
+                                    <datePicker contentMode="center" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="b14-iQ-sxj">
+                                        <rect key="frame" x="8" y="8" width="359" height="216"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="502830217.11264902">
+                                            <!--2016-12-07 19:03:37 +0000-->
+                                        </date>
+                                    </datePicker>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="bEh-2s-vBi"/>
+                                </constraints>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                            </stackView>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7hP-rl-oJ6">
+                                <rect key="frame" x="28" y="240" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="사랑">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pickEmotion:" destination="5tx-X4-sjU" eventType="touchUpInside" id="MVL-Pp-x3I"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urG-BW-VM9">
+                                <rect key="frame" x="95" y="240" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="외로움">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pickEmotion:" destination="5tx-X4-sjU" eventType="touchUpInside" id="kBm-Oj-usR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsS-12-XBR">
+                                <rect key="frame" x="298" y="240" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="침착">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pickEmotion:" destination="5tx-X4-sjU" eventType="touchUpInside" id="tGB-ym-FtZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wm7-nF-gJC">
+                                <rect key="frame" x="230" y="240" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="후련">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pickEmotion:" destination="5tx-X4-sjU" eventType="touchUpInside" id="hIc-ak-aLz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vNX-Qe-F12">
+                                <rect key="frame" x="162" y="240" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="우울">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pickEmotion:" destination="5tx-X4-sjU" eventType="touchUpInside" id="plS-gy-DDu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aCB-qi-Dui">
+                                <rect key="frame" x="28" y="308" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="자괴">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pickEmotion:" destination="5tx-X4-sjU" eventType="touchUpInside" id="oZQ-ro-qsU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efC-tc-BXU">
+                                <rect key="frame" x="95" y="308" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="재미">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pickEmotion:" destination="5tx-X4-sjU" eventType="touchUpInside" id="fDI-9H-bmt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nV-u4-SW8">
+                                <rect key="frame" x="298" y="308" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="애매">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pickEmotion:" destination="5tx-X4-sjU" eventType="touchUpInside" id="b3B-PF-ML9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0V-CX-OQI">
+                                <rect key="frame" x="230" y="308" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="분노">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pickEmotion:" destination="5tx-X4-sjU" eventType="touchUpInside" id="Mgu-a9-afG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EqM-AJ-TqJ">
+                                <rect key="frame" x="162" y="308" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="행복">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pickEmotion:" destination="5tx-X4-sjU" eventType="touchUpInside" id="zqN-Xu-sJE"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="내용을 입력해주세요." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="abw-c2-cm7">
+                                <rect key="frame" x="28" y="400" width="320" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jtb-a8-uQP">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="X3y-5H-f5p">
+                            <connections>
+                                <action selector="saveJournal:" destination="5tx-X4-sjU" id="vca-dF-Mde"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="anger" destination="e0V-CX-OQI" id="LdZ-9E-5ng"/>
+                        <outlet property="calm" destination="tsS-12-XBR" id="nC6-xk-kvX"/>
+                        <outlet property="datePicker" destination="b14-iQ-sxj" id="brV-0i-x39"/>
+                        <outlet property="feelingless" destination="4nV-u4-SW8" id="M5G-c1-Rj1"/>
+                        <outlet property="fun" destination="efC-tc-BXU" id="0aM-eb-xBB"/>
+                        <outlet property="happy" destination="EqM-AJ-TqJ" id="oh0-y7-bqJ"/>
+                        <outlet property="inputMemo" destination="abw-c2-cm7" id="Qo4-Nb-AcA"/>
+                        <outlet property="lonely" destination="urG-BW-VM9" id="nxw-Py-Npb"/>
+                        <outlet property="love" destination="7hP-rl-oJ6" id="CgD-mk-C79"/>
+                        <outlet property="relieved" destination="Wm7-nF-gJC" id="Vpf-bH-Qew"/>
+                        <outlet property="sad" destination="vNX-Qe-F12" id="7Xu-1j-rAo"/>
+                        <outlet property="shame" destination="aCB-qi-Dui" id="1hV-n2-tm9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6dz-4B-tu5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1253.5999999999999" y="-1408.2458770614694"/>
         </scene>
         <!--Timeline Table View Controller-->
         <scene sceneID="9RM-df-XBS">
@@ -124,7 +295,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c4B-t1-PHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-540" y="-2114.3928035982012"/>
+            <point key="canvasLocation" x="1254" y="-2100"/>
         </scene>
         <!--calendar-->
         <scene sceneID="wg7-f3-ORb">
@@ -352,10 +523,10 @@
             </objects>
             <point key="canvasLocation" x="1255.2" y="-708.39580209895053"/>
         </scene>
-        <!--Calendar-->
+        <!--Calendar Navigation-->
         <scene sceneID="R16-hx-vHv">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cw7-vr-L5d" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cw7-vr-L5d" userLabel="Calendar Navigation" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Calendar" image="calendar" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="XKA-us-6vI">
@@ -371,10 +542,10 @@
             </objects>
             <point key="canvasLocation" x="-540" y="-708.39580209895053"/>
         </scene>
-        <!--Timeline-->
+        <!--Timeline Navigation-->
         <scene sceneID="vra-sv-IK5">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aCA-fA-eLf" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aCA-fA-eLf" userLabel="Timeline Navigation" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Timeline" image="timeline" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="b7y-37-9sd">
@@ -390,10 +561,10 @@
             </objects>
             <point key="canvasLocation" x="-540" y="-1408.2458770614694"/>
         </scene>
-        <!--Statistics-->
+        <!--Statistics Navigation-->
         <scene sceneID="6M2-F0-8vU">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bkT-cO-4am" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bkT-cO-4am" userLabel="Statistics Navigation" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Statistics" image="statistics" id="Meb-WJ-871"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="0FL-0J-41t">
@@ -412,6 +583,7 @@
     </scenes>
     <resources>
         <image name="calendar" width="24" height="24"/>
+        <image name="create" width="24" height="24"/>
         <image name="statistics" width="24" height="24"/>
         <image name="timeline" width="24" height="24"/>
     </resources>

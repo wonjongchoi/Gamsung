@@ -17,8 +17,8 @@ class TimelineTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.emotionColor.layer.cornerRadius = self.emotionColor.fs_width / 2;
-        self.emotionColor.clipsToBounds = true;
+        self.emotionColor.layer.cornerRadius = self.emotionColor.fs_width / 2
+        self.emotionColor.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

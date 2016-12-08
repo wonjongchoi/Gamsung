@@ -15,15 +15,20 @@ class TimelineViewController: UIViewController {
         super.viewDidLoad()
 
         self.navigationItem.title = "Timeline"
-        let createButton = UIBarButtonItem(image: UIImage(named: "create"), style: .plain, target: self, action: #selector(getter: UIDynamicBehavior.action))
-                navigationItem.rightBarButtonItem = createButton
+//        let createButton = UIBarButtonItem(image: UIImage(named: "create"), style: .plain, target: self, action: #selector(getter: UIDynamicBehavior.action))
+//                navigationItem.rightBarButtonItem = createButton
         // Do any additional setup after loading the view.
+        
+        
+        self.tabBarController?.tabBar.isHidden = false
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
     
 
     /*

@@ -9,11 +9,18 @@
 import UIKit
 
 class TimelineTableViewController: UITableViewController {
+    var journal:Array<Journal> = [];
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.journal = selectAllJournal()
         
+        if #available(iOS 10.0, *) {
+            self.tableView.refreshControl?.beginRefreshing()
+        } else {
+            // Fallback on earlier versions
+        }
         //self.tabBarController?.navigationItem.leftBarButtonItem = settingsButton
 
         // Uncomment the following line to preserve selection between presentations
@@ -39,7 +46,7 @@ class TimelineTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return journal.count
+        return self.journal.count
     }
 
     
@@ -58,7 +65,7 @@ class TimelineTableViewController: UITableViewController {
 //        cell.dateLabel.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)
 //        cell.memoLabel.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)
         
-        let ctime = journal[row].ctime
+        let ctime = self.journal[row].ctime
         let dateFormatter = DateFormatter()
         
         cell.memoLabel.text = journal[row].memo
@@ -69,7 +76,7 @@ class TimelineTableViewController: UITableViewController {
         
         cell.timeLabel.text = dateFormatter.string(from: ctime)
         
-        let emotion = journal[row].emotion
+        let emotion = self.journal[row].emotion
         cell.emotionColor.backgroundColor = hexStringToUIColor(hex: (emoArray[emotion]?.resource)!)
         
         dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -81,7 +88,7 @@ class TimelineTableViewController: UITableViewController {
         cell.timeLabel.layoutMargins.left = 20
         cell.timeLabel.layoutMargins.right = 20
         
-        if (row != 0 && cal.dateComponents([Calendar.Component.day], from: ctime) == cal.dateComponents([Calendar.Component.day], from: journal[row - 1].ctime)) {
+        if (row != 0 && cal.dateComponents([Calendar.Component.day], from: ctime) == cal.dateComponents([Calendar.Component.day], from: self.journal[row - 1].ctime)) {
             cell.dateLabel.text = dateFormatter.string(from: ctime)
             cell.dateLabel.isHidden = true
         } else {

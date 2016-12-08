@@ -20,6 +20,7 @@ class StatisticsViewController: UIViewController {
         let settingsButton = UIBarButtonItem(image: UIImage(named: "settings"), style: .plain, target: self, action: #selector(getter: UIDynamicBehavior.action))
         navigationItem.rightBarButtonItem = settingsButton
 
+        self.tabBarController?.tabBar.isHidden = false
         
         // Do any additional setup after loading the view.
 //        let ys1 = Array(1..<10).map { x in return Int(arc4random_uniform(6) + 1) }

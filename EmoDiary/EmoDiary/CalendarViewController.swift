@@ -38,6 +38,8 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
         let todayButton = UIBarButtonItem(image: UIImage(named: "today"), style: .plain, target: self, action: #selector(getter: UIDynamicBehavior.action))
         navigationItem.leftBarButtonItem = todayButton
         
+        self.tabBarController?.tabBar.isHidden = false
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 

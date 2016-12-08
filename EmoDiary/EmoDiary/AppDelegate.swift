@@ -16,6 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+
+        return true
+    }
+    
+    func applicationDidFinishLaunching(_ application: UIApplication) {
+        initDB()
+        
         emoArray = [
             EmotionIndex.happy: Emotion(name: "행복", resource: "#FED958", value: 4),
             EmotionIndex.love: Emotion(name: "사랑", resource: "#FED3E0", value: 3),
@@ -28,11 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             EmotionIndex.calm: Emotion(name: "침착", resource: "#E1F7D9", value: 0),
             EmotionIndex.feelingless: Emotion(name: "애매", resource: "#E3DCCA", value: 0)
         ]
-
-        return true
     }
-    
-
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

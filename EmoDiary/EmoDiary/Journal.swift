@@ -41,7 +41,7 @@ var emoArray:Dictionary<EmotionIndex, Emotion> = [
     EmotionIndex.anger: Emotion(name: "분노", resource: "#BE5C5D", value: -4),
     EmotionIndex.sad: Emotion(name: "우울", resource: "#768EFF", value: -3),
     EmotionIndex.lonely: Emotion(name: "외로움", resource: "#E2B7EE", value: -2),
-    EmotionIndex.shame: Emotion(name: "자괴감", resource: "#D7D7D7", value: -1),
+    EmotionIndex.shame: Emotion(name: "자괴", resource: "#D7D7D7", value: -1),
     EmotionIndex.calm: Emotion(name: "침착", resource: "#E1F7D9", value: 0),
     EmotionIndex.feelingless: Emotion(name: "애매", resource: "#E3DCCA", value: 0)
 ]
