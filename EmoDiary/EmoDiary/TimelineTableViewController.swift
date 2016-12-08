@@ -9,28 +9,17 @@
 import UIKit
 
 class TimelineTableViewController: UITableViewController {
-    var journal:Array<Journal> = [];
+    private var journal:Array<Journal> = [];
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.journal = selectAllJournal()
-        
-        if #available(iOS 10.0, *) {
-            self.tableView.refreshControl?.beginRefreshing()
-        } else {
-            // Fallback on earlier versions
-        }
-        //self.tabBarController?.navigationItem.leftBarButtonItem = settingsButton
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.sㄴ
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-//        tableView.rowHeight = UITableViewAutomaticDimension
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.journal = selectAllJournal()
+        
+        self.tableView.reloadData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

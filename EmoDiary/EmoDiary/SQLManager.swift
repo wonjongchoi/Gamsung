@@ -51,9 +51,9 @@ func insertJournal(nJournal: Journal) {
         
         let dateFormatter = DateFormatter()
         
-        dateFormatter.dateFormat = "YYYY-MM-dd HH:mm"
+        dateFormatter.dateFormat = "YYYY-MM-dd HH:mm:SS"
         
-        let insertSQL = "INSERT INTO JOURNAL (memo, emo_index, ctime) VALUES ('\(nJournal.memo)', \(nJournal.emotion.rawValue), DATETIME('\(dateFormatter.string(from: nJournal.ctime.time))'))"
+        let insertSQL = "INSERT INTO JOURNAL (memo, emo_index, ctime) VALUES ('\(nJournal.memo)', \(nJournal.emotion.rawValue), DATETIME('\(dateFormatter.string(from: nJournal.ctime))'))"
         print("[Save to DB] SQL to Insert => \(insertSQL)")
         
         let result = journalDB?.executeUpdate(insertSQL, withArgumentsIn: nil)
@@ -79,15 +79,17 @@ func selectAllJournal() -> Array<Journal> {
     if (journalDB?.open())! {
         print("SELECT ALL TUPLES FROM JOURNAL")
         
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateFormat = "YYYY-MM-dd HH:mm:SS"
+        
         let selectSQL = "SELECT jid, ctime, memo, emo_index FROM JOURNAL ORDER BY ctime DESC LIMIT 20"
         
         let result:FMResultSet = (journalDB?.executeQuery(selectSQL, withArgumentsIn: nil))!
         
         while result.next() {
             
-            resultArr.append(Journal(jid: Int(result.int(forColumn: "jid")), ctime: result.date(forColumn: "ctime"), memo: result.string(forColumn: "memo"), emotion: EmotionIndex(rawValue: Int(result.int(forColumn: "emo_index")))!))
-            
-            print("ctime : \(result.date(forColumn: "ctime"))")
+            resultArr.append(Journal(jid: Int(result.int(forColumn: "jid")), ctime: dateFormatter.date(from: result.string(forColumn: "ctime"))!, memo: result.string(forColumn: "memo"), emotion: EmotionIndex(rawValue: Int(result.int(forColumn: "emo_index")))!))
         }
         
         journalDB?.close()

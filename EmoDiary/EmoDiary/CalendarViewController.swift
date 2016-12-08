@@ -25,7 +25,8 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
     }()
 
     private weak var calendar: FSCalendar!
-    private weak var eventLabel: UILabel!
+    
+    private var journal:Array<Journal> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +42,10 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
         self.tabBarController?.tabBar.isHidden = false
         
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.journal = selectAllJournal()
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,21 +65,23 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
         self.view = view
         
         let height: CGFloat = UIDevice.current.model.hasPrefix("iPad") ? 450 : 300
-        let calendar = FSCalendar(frame: CGRect(x: 0, y: 20, width: view.frame.size.width, height: height))
+        let calendar = FSCalendar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: height))
         calendar.dataSource = self
         calendar.delegate = self
         calendar.scopeGesture.isEnabled = true
-        //    calendar.backgroundColor = [UIColor whiteColor];
         view.addSubview(calendar)
         self.calendar = calendar
         
-        calendar.calendarHeaderView.backgroundColor = UIColor.white//UIColor.lightGray.withAlphaComponent(0.1)
-        calendar.calendarWeekdayView.backgroundColor = UIColor.white//UIColor.lightGray.withAlphaComponent(0.1)
+        calendar.calendarHeaderView.backgroundColor = UIColor.white
+        calendar.calendarWeekdayView.backgroundColor = UIColor.white
         calendar.appearance.eventSelectionColor = UIColor.white
         calendar.appearance.eventOffset = CGPoint(x: 0, y: -7)
-//        calendar.today = nil // Hide the today circle
+        calendar.today = nil // Hide the today circle
         calendar.register(FSCalendarCell.self, forCellReuseIdentifier: "cell")
         calendar.appearance.todayColor = UIColor.orange
+        calendar.appearance.borderSelectionColor = UIColor.black
+        calendar.appearance.selectionColor = UIColor.white
+        calendar.appearance.titleSelectionColor = UIColor.black
         
 //        calendar.appearance.headerDateFormat = "yyyy MMMM";
         
@@ -109,6 +116,7 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
 //        attributedText.appendAttributedString(NSAttributedString(string: "  Hey Daily Event  "))
 //        attributedText.appendAttributedString(NSAttributedString(attachment: attatchment))
 //        self.eventLabel.attributedText = attributedText
+        calendar.select(Date.init())
     }
     
     func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
@@ -116,21 +124,17 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
         return cell
     }
     
-    
     func calendar(_ calendar: FSCalendar, willDisplay cell: FSCalendarCell, for date: Date, at position: FSCalendarMonthPosition) {
         configure(cell: cell, for: date as NSDate, at: position)
     }
     
     
     func calendar(_ calendar: FSCalendar, titleFor date: Date) -> String? {
-//        if self.gregorian.isDateInToday(date as Date) {
-//            return "今"
-//        }
         return nil
     }
     
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
-        return getJournalOfDate(date: date).count
+        return getJournalOfDate(journal: self.journal, date: date).count
     }
     
     func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
@@ -148,12 +152,9 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
     }
     
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, eventDefaultColorsFor date: Date) -> [UIColor]? {
-//        if self.gregorian.isDateInToday(date) {
-//            return [UIColor.white]
-//        }
         var result:[UIColor] = []
         
-        for j in getJournalOfDate(date: date) {
+        for j in getJournalOfDate(journal: self.journal, date: date) {
             result.append(hexStringToUIColor(hex: (emoArray[j.emotion]?.resource)!))
         }
         
@@ -168,6 +169,7 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
         
         diyCell.eventIndicator.color = calendar(calendar, appearance: calendar.appearance, eventDefaultColorsFor: date as Date)
         
+//        diyCell.imageView.
 //        diyCell.eventIndicator.
         
 //        print(diyCell.eventIndicator.)

@@ -177,7 +177,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -212,7 +212,7 @@
         <scene sceneID="9RM-df-XBS">
             <objects>
                 <tableViewController id="Qja-X4-o9s" customClass="TimelineTableViewController" customModule="EmoDiary" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="B6M-2l-krv">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="B6M-2l-krv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="546"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -267,6 +267,9 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="THL-Ai-TqI" firstAttribute="centerY" relation="greaterThanOrEqual" secondItem="h7X-00-0mo" secondAttribute="centerY" constant="10" id="Rzy-xZ-kWZ"/>
+                                                            </constraints>
                                                             <edgeInsets key="layoutMargins" top="0.0" left="20" bottom="0.0" right="10"/>
                                                         </stackView>
                                                     </subviews>
@@ -297,10 +300,10 @@
             </objects>
             <point key="canvasLocation" x="1254" y="-2100"/>
         </scene>
-        <!--calendar-->
+        <!--Calendar-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" userLabel="calendar" customClass="CalendarViewController" customModule="EmoDiary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" userLabel="Calendar" customClass="CalendarViewController" customModule="EmoDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -313,13 +316,16 @@
                                 <rect key="frame" x="342" y="20" width="40" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m2F-Ec-aqT" customClass="FSCalendar">
-                                <rect key="frame" x="0.0" y="20" width="375" height="348"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="m2F-Ec-aqT" userLabel="calendar" customClass="FSCalendar">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="348"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration" identifier="calendar">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <connections>
-                                    <outlet property="dataSource" destination="8rJ-Kc-sve" id="fEu-av-08b"/>
-                                    <outlet property="delegate" destination="8rJ-Kc-sve" id="JYc-A6-dLA"/>
+                                    <outlet property="dataSource" destination="8rJ-Kc-sve" id="t6P-SX-bSh"/>
+                                    <outlet property="delegate" destination="8rJ-Kc-sve" id="4tY-aq-gGP"/>
                                 </connections>
                             </view>
                         </subviews>
@@ -338,6 +344,9 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Zv6-VN-0QR"/>
+                    <connections>
+                        <outlet property="calendar" destination="m2F-Ec-aqT" id="xin-l2-KBf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>

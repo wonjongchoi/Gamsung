@@ -8,7 +8,7 @@
 
 import Foundation
 
-func getJournalOfDate(date: Date) -> Array<Journal> {
+func getJournalOfDate(journal:Array<Journal>, date: Date) -> Array<Journal> {
     let cal = Calendar(identifier:Calendar.Identifier.gregorian)
     
     return journal.filter({ (j: Journal) -> (Bool) in

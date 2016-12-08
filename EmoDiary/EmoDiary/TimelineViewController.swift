@@ -21,6 +21,8 @@ class TimelineViewController: UIViewController {
         
         
         self.tabBarController?.tabBar.isHidden = false
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

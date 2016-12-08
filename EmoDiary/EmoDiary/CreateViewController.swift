@@ -58,6 +58,8 @@ class CreateViewController: UIViewController {
         nogadaBtnSet()
         
         self.love.setTitleColor(UIColor.black, for: .normal)
+        
+        datePicker.maximumDate = Date.init()
     }
 
     override func didReceiveMemoryWarning() {
