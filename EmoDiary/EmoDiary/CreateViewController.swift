@@ -40,13 +40,8 @@ class CreateViewController: UIViewController {
         } else {
             insertJournal(nJournal: Journal(jid: 0, ctime: datePicker.date, memo: inputMemo.text!, emotion: selectEmo))
             
-            self.tabBarController?.tabBar.isHidden = false
             self.navigationController?.popViewController(animated: true)
         }
-        
-//        insertJournal(nJournal: Journal(jid: 4, ctime: getFormatter().date(from: "2016-11-29 16:00")!, memo: "이벤트 색 바뀜!!!", emotion: EmotionIndex.love))
-//        
-//        self.navigationController?.popViewController(animated: true)
     }
     
     override func viewDidLoad() {
@@ -65,6 +60,14 @@ class CreateViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillDisappear(_ animated : Bool) {
+        super.viewWillDisappear(animated)
+        
+        if (self.isMovingFromParentViewController){
+            self.tabBarController?.tabBar.isHidden = false
+        }
     }
     
     func showToast(msg:String) {
