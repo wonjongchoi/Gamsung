@@ -36,7 +36,7 @@ class CreateViewController: UIViewController {
     
     @IBAction func saveJournal(_ sender: UIBarButtonItem) {
         if (inputMemo.text?.characters.count == 0) {
-            showToast(msg: "한줄 메모를 입력해주세요.")
+            showToast(view: self, msg: "한줄 메모를 입력해주세요.")
         } else {
             insertJournal(nJournal: Journal(jid: 0, ctime: datePicker.date, memo: inputMemo.text!, emotion: selectEmo))
             
@@ -67,19 +67,6 @@ class CreateViewController: UIViewController {
         
         if (self.isMovingFromParentViewController){
             self.tabBarController?.tabBar.isHidden = false
-        }
-    }
-    
-    func showToast(msg:String) {
-        let toast = UIAlertController()
-        toast.message = msg
-        
-        self.present(toast, animated: true, completion: nil)
-        
-        let deadlineTime = DispatchTime.now() + .seconds(1)
-        
-        DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
-            toast.dismiss(animated: true, completion: nil)
         }
     }
     

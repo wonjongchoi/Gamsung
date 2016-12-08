@@ -8,6 +8,19 @@
 
 import Foundation
 
+func showToast(view: UIViewController, msg:String) {
+    let toast = UIAlertController()
+    toast.message = msg
+    
+    view.present(toast, animated: true, completion: nil)
+    
+    let deadlineTime = DispatchTime.now() + .seconds(1)
+    
+    DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
+        toast.dismiss(animated: true, completion: nil)
+    }
+}
+
 func getJournalOfDate(journal:Array<Journal>, date: Date) -> Array<Journal> {
     let cal = Calendar(identifier:Calendar.Identifier.gregorian)
     

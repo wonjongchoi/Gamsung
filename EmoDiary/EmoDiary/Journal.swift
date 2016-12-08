@@ -34,10 +34,10 @@ struct Emotion {
 }
 
 var emoArray:Dictionary<EmotionIndex, Emotion> = [
-    EmotionIndex.happy: Emotion(name: "행복", resource: "#FED958", value: 4),
-    EmotionIndex.love: Emotion(name: "사랑", resource: "#FED3E0", value: 3),
+    EmotionIndex.happy: Emotion(name: "행복", resource: "#FED958", value: 3),
+    EmotionIndex.love: Emotion(name: "사랑", resource: "#FED3E0", value: 2),
     EmotionIndex.relieved: Emotion(name: "후련", resource: "#D2EEFB", value: 1),
-    EmotionIndex.fun: Emotion(name: "재미", resource: "#FFB364", value: 2),
+    EmotionIndex.fun: Emotion(name: "재미", resource: "#FFB364", value: 4),
     EmotionIndex.anger: Emotion(name: "분노", resource: "#BE5C5D", value: -4),
     EmotionIndex.sad: Emotion(name: "우울", resource: "#768EFF", value: -3),
     EmotionIndex.lonely: Emotion(name: "외로움", resource: "#E2B7EE", value: -2),
