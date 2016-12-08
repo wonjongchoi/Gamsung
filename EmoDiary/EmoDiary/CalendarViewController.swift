@@ -33,11 +33,11 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
         
         self.navigationItem.title = "Calendar"
 
-        let createButton = UIBarButtonItem(image: UIImage(named: "create"), style: .plain, target: self, action: #selector(getter: UIDynamicBehavior.action))
+      /*  let createButton = UIBarButtonItem(image: UIImage(named: "create"), style: .plain, target: self, action: #selector(getter: UIDynamicBehavior.action))
         navigationItem.rightBarButtonItem = createButton
         
         let todayButton = UIBarButtonItem(image: UIImage(named: "today"), style: .plain, target: self, action: #selector(getter: UIDynamicBehavior.action))
-        navigationItem.leftBarButtonItem = todayButton
+        navigationItem.leftBarButtonItem = todayButton */
         
         self.tabBarController?.tabBar.isHidden = false
         

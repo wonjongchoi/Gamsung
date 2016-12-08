@@ -41,6 +41,10 @@
 		6C353EF0CEBD7D64812CC2DB /* fmdb.xcodeproj in Resources */ = {isa = PBXBuildFile; fileRef = 3C968579EF300ACF8C177F9C /* fmdb.xcodeproj */; };
 		6D0DF4465EB674AE10825E3A /* Supporting Files in Resources */ = {isa = PBXBuildFile; fileRef = E603DB765DB1C15375996338 /* Supporting Files */; };
 		6E84C767D1F2108E02BC14DF /* Charts in Resources */ = {isa = PBXBuildFile; fileRef = 69D91EA4DF9C6E08AF07E849 /* Charts */; };
+		7281F8ED1DF9A2D800DB1E57 /* FMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4256AB21DF69EA200B322D5 /* FMDB.framework */; };
+		7281F8EE1DF9A2D800DB1E57 /* FMDB.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E4256AB21DF69EA200B322D5 /* FMDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7281F8F11DF9A2DC00DB1E57 /* FMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4256AB41DF69EA200B322D5 /* FMDB.framework */; };
+		7281F8F21DF9A2DC00DB1E57 /* FMDB.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E4256AB41DF69EA200B322D5 /* FMDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7550FD68C44AFFFEA3FEAB0A /* FMDB.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 2E5A7195127F800BFEF4EC09 /* FMDB.podspec */; };
 		78B5B683227E1FFD1F04AF91 /* FSCalendarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 790E3BE57F1C394DA39D8179 /* FSCalendarHeaderView.m */; };
 		7B34888C66CE2808BCB67462 /* CHANGES_AND_TODO_LIST.txt in Resources */ = {isa = PBXBuildFile; fileRef = 05AF088EA27E6C5FA26D6298 /* CHANGES_AND_TODO_LIST.txt */; };
@@ -84,10 +88,6 @@
 		E4256ABE1DF69F3A00B322D5 /* TimelineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4256ABA1DF69F3A00B322D5 /* TimelineTableViewController.swift */; };
 		E4256ACB1DF69F5B00B322D5 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4256AC61DF69F5100B322D5 /* Charts.framework */; };
 		E4256ACC1DF69F5B00B322D5 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E4256AC61DF69F5100B322D5 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E4256AD01DF69F6D00B322D5 /* FMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4256AB21DF69EA200B322D5 /* FMDB.framework */; };
-		E4256AD11DF69F6D00B322D5 /* FMDB.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E4256AB21DF69EA200B322D5 /* FMDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E4256AD41DF6ED1B00B322D5 /* FMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4256AB41DF69EA200B322D5 /* FMDB.framework */; };
-		E4256AD51DF6ED1B00B322D5 /* FMDB.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E4256AB41DF69EA200B322D5 /* FMDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E4256AD81DF6ED7300B322D5 /* src in Sources */ = {isa = PBXBuildFile; fileRef = 047C29B9E9DEC23367B6C1BE /* src */; };
 		E4256ADE1DF74DBB00B322D5 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4256ADD1DF74DBB00B322D5 /* AppManager.swift */; };
 		E4256ADF1DF74DBB00B322D5 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4256ADD1DF74DBB00B322D5 /* AppManager.swift */; };
@@ -125,6 +125,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		7281F8EF1DF9A2D800DB1E57 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3C968579EF300ACF8C177F9C /* fmdb.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 83C73EFD1C326AB000FFC730;
+			remoteInfo = "FMDB iOS";
+		};
+		7281F8F31DF9A2DC00DB1E57 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3C968579EF300ACF8C177F9C /* fmdb.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 83C73F0A1C326ADA00FFC730;
+			remoteInfo = "FMDB MacOS";
+		};
 		E4256AA91DF69EA200B322D5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3C968579EF300ACF8C177F9C /* fmdb.xcodeproj */;
@@ -195,13 +209,6 @@
 			remoteGlobalIDString = 06165F231D8110E600722320;
 			remoteInfo = Charts;
 		};
-		E4256AD21DF69F6D00B322D5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3C968579EF300ACF8C177F9C /* fmdb.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 83C73EFD1C326AB000FFC730;
-			remoteInfo = "FMDB iOS";
-		};
 		E4F4C7521DC8643C00CD41AF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E4F4C7331DC8643C00CD41AF /* Project object */;
@@ -226,8 +233,8 @@
 			dstSubfolderSpec = 10;
 			files = (
 				E4256ACC1DF69F5B00B322D5 /* Charts.framework in Embed Frameworks */,
-				E4256AD51DF6ED1B00B322D5 /* FMDB.framework in Embed Frameworks */,
-				E4256AD11DF69F6D00B322D5 /* FMDB.framework in Embed Frameworks */,
+				7281F8F21DF9A2DC00DB1E57 /* FMDB.framework in Embed Frameworks */,
+				7281F8EE1DF9A2D800DB1E57 /* FMDB.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,8 +317,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4256ACB1DF69F5B00B322D5 /* Charts.framework in Frameworks */,
-				E4256AD41DF6ED1B00B322D5 /* FMDB.framework in Frameworks */,
-				E4256AD01DF69F6D00B322D5 /* FMDB.framework in Frameworks */,
+				7281F8F11DF9A2DC00DB1E57 /* FMDB.framework in Frameworks */,
+				7281F8ED1DF9A2D800DB1E57 /* FMDB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,7 +547,8 @@
 			);
 			dependencies = (
 				E4256ACE1DF69F5C00B322D5 /* PBXTargetDependency */,
-				E4256AD31DF69F6D00B322D5 /* PBXTargetDependency */,
+				7281F8F01DF9A2D800DB1E57 /* PBXTargetDependency */,
+				7281F8F41DF9A2DC00DB1E57 /* PBXTargetDependency */,
 			);
 			name = EmoDiary;
 			productName = EmoDiary;
@@ -863,15 +871,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		7281F8F01DF9A2D800DB1E57 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "FMDB iOS";
+			targetProxy = 7281F8EF1DF9A2D800DB1E57 /* PBXContainerItemProxy */;
+		};
+		7281F8F41DF9A2DC00DB1E57 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "FMDB MacOS";
+			targetProxy = 7281F8F31DF9A2DC00DB1E57 /* PBXContainerItemProxy */;
+		};
 		E4256ACE1DF69F5C00B322D5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Charts;
 			targetProxy = E4256ACD1DF69F5C00B322D5 /* PBXContainerItemProxy */;
-		};
-		E4256AD31DF69F6D00B322D5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "FMDB iOS";
-			targetProxy = E4256AD21DF69F6D00B322D5 /* PBXContainerItemProxy */;
 		};
 		E4F4C7531DC8643C00CD41AF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

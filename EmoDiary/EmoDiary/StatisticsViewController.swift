@@ -17,8 +17,8 @@ class StatisticsViewController: UIViewController {
         
         self.navigationItem.title = "Statistics"
         
-        let settingsButton = UIBarButtonItem(image: UIImage(named: "settings"), style: .plain, target: self, action: #selector(getter: UIDynamicBehavior.action))
-        navigationItem.rightBarButtonItem = settingsButton
+       /* let settingsButton = UIBarButtonItem(image: UIImage(named: "settings"), style: .plain, target: self, action: #selector(getter: UIDynamicBehavior.action))
+        navigationItem.rightBarButtonItem = settingsButton */
 
         self.tabBarController?.tabBar.isHidden = false
         
