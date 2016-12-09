@@ -42,7 +42,6 @@
 		6D0DF4465EB674AE10825E3A /* Supporting Files in Resources */ = {isa = PBXBuildFile; fileRef = E603DB765DB1C15375996338 /* Supporting Files */; };
 		6E84C767D1F2108E02BC14DF /* Charts in Resources */ = {isa = PBXBuildFile; fileRef = 69D91EA4DF9C6E08AF07E849 /* Charts */; };
 		7281F8ED1DF9A2D800DB1E57 /* FMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4256AB21DF69EA200B322D5 /* FMDB.framework */; };
-		7281F8EE1DF9A2D800DB1E57 /* FMDB.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E4256AB21DF69EA200B322D5 /* FMDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7281F8F11DF9A2DC00DB1E57 /* FMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4256AB41DF69EA200B322D5 /* FMDB.framework */; };
 		7281F8F21DF9A2DC00DB1E57 /* FMDB.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E4256AB41DF69EA200B322D5 /* FMDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7550FD68C44AFFFEA3FEAB0A /* FMDB.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 2E5A7195127F800BFEF4EC09 /* FMDB.podspec */; };
@@ -88,7 +87,7 @@
 		E4256ABE1DF69F3A00B322D5 /* TimelineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4256ABA1DF69F3A00B322D5 /* TimelineTableViewController.swift */; };
 		E4256ACB1DF69F5B00B322D5 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4256AC61DF69F5100B322D5 /* Charts.framework */; };
 		E4256ACC1DF69F5B00B322D5 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E4256AC61DF69F5100B322D5 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E4256AD81DF6ED7300B322D5 /* src in Sources */ = {isa = PBXBuildFile; fileRef = 047C29B9E9DEC23367B6C1BE /* src */; };
+		E4256AD41DF6ED1B00B322D5 /* FMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4256AB41DF69EA200B322D5 /* FMDB.framework */; };
 		E4256ADE1DF74DBB00B322D5 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4256ADD1DF74DBB00B322D5 /* AppManager.swift */; };
 		E4256ADF1DF74DBB00B322D5 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4256ADD1DF74DBB00B322D5 /* AppManager.swift */; };
 		E4256AE01DF74DBB00B322D5 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4256ADD1DF74DBB00B322D5 /* AppManager.swift */; };
@@ -137,13 +136,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 83C73EFD1C326AB000FFC730;
 			remoteInfo = "FMDB iOS";
-		};
-		7281F8F31DF9A2DC00DB1E57 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3C968579EF300ACF8C177F9C /* fmdb.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 83C73F0A1C326ADA00FFC730;
-			remoteInfo = "FMDB MacOS";
 		};
 		E4256AA91DF69EA200B322D5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -240,7 +232,6 @@
 			files = (
 				E4256ACC1DF69F5B00B322D5 /* Charts.framework in Embed Frameworks */,
 				7281F8F21DF9A2DC00DB1E57 /* FMDB.framework in Embed Frameworks */,
-				7281F8EE1DF9A2D800DB1E57 /* FMDB.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,6 +318,7 @@
 				E4256ACB1DF69F5B00B322D5 /* Charts.framework in Frameworks */,
 				7281F8F11DF9A2DC00DB1E57 /* FMDB.framework in Frameworks */,
 				7281F8ED1DF9A2D800DB1E57 /* FMDB.framework in Frameworks */,
+				E4256AD41DF6ED1B00B322D5 /* FMDB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,7 +550,6 @@
 			dependencies = (
 				E4256ACE1DF69F5C00B322D5 /* PBXTargetDependency */,
 				7281F8F01DF9A2D800DB1E57 /* PBXTargetDependency */,
-				7281F8F41DF9A2DC00DB1E57 /* PBXTargetDependency */,
 			);
 			name = EmoDiary;
 			productName = EmoDiary;
@@ -567,7 +558,7 @@
 		};
 		E4F4C7501DC8643C00CD41AF /* EmoDiaryTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E4F4C7681DC8643C00CD41AF /* Build configuration list for PBXNativeTarget "EmoDiaryTests" */;
+			buildConfigurationList = E44DD4B11DFA8D01003098B2 /* Build configuration list */;
 			buildPhases = (
 				E4F4C74D1DC8643C00CD41AF /* Sources */,
 				E4F4C74E1DC8643C00CD41AF /* Frameworks */,
@@ -613,6 +604,7 @@
 				TargetAttributes = {
 					E4F4C73A1DC8643C00CD41AF = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = BRK4T3NF8C;
 						LastSwiftMigration = 0800;
 					};
 					E4F4C7501DC8643C00CD41AF = {
@@ -622,6 +614,7 @@
 					};
 					E4F4C75B1DC8643C00CD41AF = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = BRK4T3NF8C;
 						LastSwiftMigration = 0800;
 						TestTargetID = E4F4C73A1DC8643C00CD41AF;
 					};
@@ -791,30 +784,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4256AD81DF6ED7300B322D5 /* src in Sources */,
 				F526AAB8CBF588183BE3E487 /* FSCalendarWeekdayView.m in Sources */,
 				F4A925FD4919C79F50E7F989 /* FSCalendarStickyHeader.m in Sources */,
 				1F5F4A0E7C2E241AA2394665 /* FSCalendarScopeHandle.m in Sources */,
 				5510340F17089673891E0EDE /* FSCalendarHeaderView.m in Sources */,
 				E4BC6C2F1DF9D1E100F6C4F8 /* SettingViewController.swift in Sources */,
 				92682FD93C55E2CEA782A384 /* FSCalendarExtensions.m in Sources */,
-				E4256ADE1DF74DBB00B322D5 /* AppManager.swift in Sources */,
 				2E437DB50A4137F2CA90E996 /* FSCalendarDelegateProxy.m in Sources */,
 				E4943E241DF9C392001C7728 /* ColorValueTableController.swift in Sources */,
 				80F58A4ECFFF76603E377F51 /* FSCalendarConstants.m in Sources */,
 				1F1AA8F34A7AEF77A99CFB2A /* FSCalendarCollectionViewLayout.m in Sources */,
 				1C84A76BB4B78F32EA894DAA /* FSCalendarCollectionView.m in Sources */,
 				E60A539FC3BB257A27AD9739 /* FSCalendarCell.m in Sources */,
-				E4256ABC1DF69F3A00B322D5 /* SQLManager.swift in Sources */,
 				941DBE1154F78C3F46CE8E28 /* FSCalendarCalculator.m in Sources */,
-				E4256ABE1DF69F3A00B322D5 /* TimelineTableViewController.swift in Sources */,
 				C274C6080D15A86DFE5ECEFF /* FSCalendarAppearance.m in Sources */,
 				E4256AEB1DF88E1600B322D5 /* CreateViewController.swift in Sources */,
 				E4256ABB1DF69F3A00B322D5 /* DummyJournal.swift in Sources */,
 				3B53EF17F27FF6EE4C708875 /* FSCalendarAnimator.m in Sources */,
 				A26AE470FE898409E67BAB97 /* FSCalendar.m in Sources */,
-				E4256ABD1DF69F3A00B322D5 /* TimelineTableViewCell.swift in Sources */,
 				9ACA7DBC3AE664C5D7B7E9E4 /* FSCalendar+Deprecated.m in Sources */,
+				E4256ADE1DF74DBB00B322D5 /* AppManager.swift in Sources */,
+				E4256ABC1DF69F3A00B322D5 /* SQLManager.swift in Sources */,
+				E4256ABE1DF69F3A00B322D5 /* TimelineTableViewController.swift in Sources */,
+				E4256ABD1DF69F3A00B322D5 /* TimelineTableViewCell.swift in Sources */,
 				E40494ED1DD760D7004AD1DF /* EmoCalendarCell.swift in Sources */,
 				E4F4C7431DC8643C00CD41AF /* CalendarViewController.swift in Sources */,
 				E4F4C73F1DC8643C00CD41AF /* AppDelegate.swift in Sources */,
@@ -841,12 +833,12 @@
 				4AA973DC1FBE25D03685659F /* FSCalendarCollectionView.m in Sources */,
 				D67978BAB478D3B9B51090E8 /* FSCalendarCell.m in Sources */,
 				42D640678DA8C8D61D7B27AA /* FSCalendarCalculator.m in Sources */,
-				E4256ADF1DF74DBB00B322D5 /* AppManager.swift in Sources */,
 				3BED4D63B9809809800D318B /* FSCalendarAppearance.m in Sources */,
 				B32ABF4876F1FB9CDF344F69 /* FSCalendarAnimator.m in Sources */,
 				E80CCB8F93718055A4779A43 /* FSCalendar.m in Sources */,
 				2D2F7AF04C1B694DD41DE25D /* FSCalendar+Deprecated.m in Sources */,
 				E4BC6C301DF9D1E100F6C4F8 /* SettingViewController.swift in Sources */,
+				E4256ADF1DF74DBB00B322D5 /* AppManager.swift in Sources */,
 				E40494EE1DD760D7004AD1DF /* EmoCalendarCell.swift in Sources */,
 				E4F4C7561DC8643C00CD41AF /* EmoDiaryTests.swift in Sources */,
 				E4F4C7701DC8648400CD41AF /* Journal.swift in Sources */,
@@ -871,12 +863,12 @@
 				D3DC2D9918F53A389C05C417 /* FSCalendarCollectionView.m in Sources */,
 				D4D673002A40C6290033127F /* FSCalendarCell.m in Sources */,
 				1CC79D1A4CCD5C346A5B430B /* FSCalendarCalculator.m in Sources */,
-				E4256AE01DF74DBB00B322D5 /* AppManager.swift in Sources */,
 				5FC1D12B11495CDDFB8E2A18 /* FSCalendarAppearance.m in Sources */,
 				E6F2A9A1F2CDC2ABA3DD3C30 /* FSCalendarAnimator.m in Sources */,
 				33C356F26714306D253AA817 /* FSCalendar.m in Sources */,
 				8C9BEFA8705F5B5392B7DF92 /* FSCalendar+Deprecated.m in Sources */,
 				E4BC6C311DF9D1E100F6C4F8 /* SettingViewController.swift in Sources */,
+				E4256AE01DF74DBB00B322D5 /* AppManager.swift in Sources */,
 				E40494EF1DD760D7004AD1DF /* EmoCalendarCell.swift in Sources */,
 				E4F4C7611DC8643C00CD41AF /* EmoDiaryUITests.swift in Sources */,
 				E4F4C7711DC8648400CD41AF /* Journal.swift in Sources */,
@@ -891,11 +883,6 @@
 			isa = PBXTargetDependency;
 			name = "FMDB iOS";
 			targetProxy = 7281F8EF1DF9A2D800DB1E57 /* PBXContainerItemProxy */;
-		};
-		7281F8F41DF9A2DC00DB1E57 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "FMDB MacOS";
-			targetProxy = 7281F8F31DF9A2DC00DB1E57 /* PBXContainerItemProxy */;
 		};
 		E4256ACE1DF69F5C00B322D5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -934,11 +921,31 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		E44DD4A81DFA8D00003098B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = EmoDiaryTests;
+			};
+			name = Debug;
+		};
+		E44DD4A91DFA8D00003098B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				PRODUCT_NAME = EmoDiaryTests;
+			};
+			name = Release;
+		};
 		E4F4C7631DC8643C00CD41AF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_OBJC_RETAIN_COUNT = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -975,7 +982,9 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_INCLUDE_PATHS = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 3.0.1;
 			};
 			name = Debug;
 		};
@@ -984,6 +993,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_OBJC_RETAIN_COUNT = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1013,6 +1023,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_INCLUDE_PATHS = "";
+				SWIFT_VERSION = 3.0.1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1022,6 +1034,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = BRK4T3NF8C;
 				INFOPLIST_FILE = EmoDiary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				New_Setting = "";
@@ -1037,6 +1050,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = BRK4T3NF8C;
 				INFOPLIST_FILE = EmoDiary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				New_Setting = "";
@@ -1047,35 +1061,10 @@
 			};
 			name = Release;
 		};
-		E4F4C7691DC8643C00CD41AF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = EmoDiaryTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gamsung.EmoDiaryTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EmoDiary.app/EmoDiary";
-			};
-			name = Debug;
-		};
-		E4F4C76A1DC8643C00CD41AF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = EmoDiaryTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gamsung.EmoDiaryTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EmoDiary.app/EmoDiary";
-			};
-			name = Release;
-		};
 		E4F4C76C1DC8643C00CD41AF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = BRK4T3NF8C;
 				INFOPLIST_FILE = EmoDiaryUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gamsung.EmoDiaryUITests;
@@ -1088,6 +1077,7 @@
 		E4F4C76D1DC8643C00CD41AF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = BRK4T3NF8C;
 				INFOPLIST_FILE = EmoDiaryUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gamsung.EmoDiaryUITests;
@@ -1100,6 +1090,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E44DD4B11DFA8D01003098B2 /* Build configuration list */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E44DD4A81DFA8D00003098B2 /* Debug */,
+				E44DD4A91DFA8D00003098B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E4F4C7361DC8643C00CD41AF /* Build configuration list for PBXProject "EmoDiary" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1114,15 +1113,6 @@
 			buildConfigurations = (
 				E4F4C7661DC8643C00CD41AF /* Debug */,
 				E4F4C7671DC8643C00CD41AF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E4F4C7681DC8643C00CD41AF /* Build configuration list for PBXNativeTarget "EmoDiaryTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E4F4C7691DC8643C00CD41AF /* Debug */,
-				E4F4C76A1DC8643C00CD41AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

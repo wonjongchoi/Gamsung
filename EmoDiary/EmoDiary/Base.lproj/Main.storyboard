@@ -328,6 +328,11 @@
                                     <outlet property="delegate" destination="8rJ-Kc-sve" id="4tY-aq-gGP"/>
                                 </connections>
                             </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="lineChartView" translatesAutoresizingMaskIntoConstraints="NO" id="PMc-kc-oON" userLabel="Line Chart View" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="376" width="375" height="170"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <variation key="default">
@@ -357,6 +362,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="calendar" destination="m2F-Ec-aqT" id="xin-l2-KBf"/>
+                        <outlet property="lineChartView" destination="PMc-kc-oON" id="CZV-P0-M7i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -488,10 +494,16 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wfK-vs-DW1" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="67" y="269" width="240" height="128"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="barChartView" translatesAutoresizingMaskIntoConstraints="NO" id="Nv9-Mp-vi7" userLabel="Bar Chart View" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="8" y="2" width="359" height="268"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration" identifier="barChartView"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="pieChartView" translatesAutoresizingMaskIntoConstraints="NO" id="LJC-au-b8B" userLabel="Pie Chart View" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="278" width="375" height="268"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -504,7 +516,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="barChartView" destination="wfK-vs-DW1" id="W2L-oX-u5U"/>
+                        <outlet property="barChartView" destination="Nv9-Mp-vi7" id="FrO-oz-Fv8"/>
+                        <outlet property="pieChartView" destination="LJC-au-b8B" id="JlS-R0-gwa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jgw-lj-G60" userLabel="First Responder" sceneMemberID="firstResponder"/>

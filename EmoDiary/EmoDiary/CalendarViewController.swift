@@ -6,6 +6,7 @@
 //  Copyright © 2016년 gamsung. All rights reserved.
 //
 import UIKit
+//import Charts
 
 enum SelectionType : Int {
     case none
@@ -16,6 +17,7 @@ enum SelectionType : Int {
 }
 
 class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate {
+//    @IBOutlet weak var lineChartView: LineChartView!
     
     private let gregorian = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)!
     private let formatter: DateFormatter = {
@@ -227,6 +229,26 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
 //            }
 //        }
     }
+    
+//    func setChart(dataPoints: [String], values: [Double]) {
+//        
+//        var dataEntries: [ChartDataEntry] = Array()
+//        var linedataSet: ChartDataSet!
+//        
+//        for (i, value) in values.enumerated()
+//        {
+//            dataEntries.append(ChartDataEntry(x: Double(i), y: value))
+//        }
+//        
+//        linedataSet = LineChartDataSet(values: dataEntries, label: "Emotion Statistics")
+//        
+//        let linedata = LineChartData(dataSet: linedataSet)
+//        
+//        self.lineChartView.data = linedata
+//        
+//        linedataSet.colors = ChartColorTemplates.pastel()
+//        
+//    }
 
 }
 
