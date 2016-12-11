@@ -6,7 +6,7 @@
 //  Copyright © 2016년 gamsung. All rights reserved.
 //
 import UIKit
-//import Charts
+import Charts
 
 enum SelectionType : Int {
     case none
@@ -17,7 +17,12 @@ enum SelectionType : Int {
 }
 
 class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate {
-//    @IBOutlet weak var lineChartView: LineChartView!
+    private weak var lineChartView: BarChartView!
+//    @IBOutlet weak var lineChartView: LineChartView!{
+//        didSet {
+//            NSLog("LineChartView set to %@", lineChartView);
+//        }
+//    }
     
     private let gregorian = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)!
     private let formatter: DateFormatter = {
@@ -40,10 +45,21 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
         self.navigationItem.title = "Calendar"
         
         self.tabBarController?.tabBar.isHidden = false
+        
+        self.lineChartView = BarChartView.init(frame: CGRect(x: 0, y: 356, width: 375, height: 198))
+        
+        let DummyIndex = ["행복","사랑","후련", "재미", "분노", "우울", "외로움", "자괴감", "침착", "애매"]
+        let DummyEmo = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 5.0, 10.0, 7.0, 13.0]
+        
+//        setChart(dataPoints: DummyIndex, values: DummyEmo)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.journal = selectAllJournal()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -230,25 +246,25 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
 //        }
     }
     
-//    func setChart(dataPoints: [String], values: [Double]) {
-//        
-//        var dataEntries: [ChartDataEntry] = Array()
-//        var linedataSet: ChartDataSet!
-//        
-//        for (i, value) in values.enumerated()
-//        {
-//            dataEntries.append(ChartDataEntry(x: Double(i), y: value))
-//        }
-//        
-//        linedataSet = LineChartDataSet(values: dataEntries, label: "Emotion Statistics")
-//        
-//        let linedata = LineChartData(dataSet: linedataSet)
-//        
-//        self.lineChartView.data = linedata
-//        
-//        linedataSet.colors = ChartColorTemplates.pastel()
-//        
-//    }
+    func setChart(dataPoints: [String], values: [Double]) {
+        
+        var dataEntries: [ChartDataEntry] = Array()
+        var linedataSet: ChartDataSet!
+        
+        for (i, value) in values.enumerated()
+        {
+            dataEntries.append(ChartDataEntry(x: Double(i), y: value))
+        }
+        
+        linedataSet = LineChartDataSet(values: dataEntries, label: "Emotion Statistics")
+        
+        let linedata = LineChartData(dataSet: linedataSet)
+        
+        self.lineChartView.data = linedata
+        
+        linedataSet.colors = ChartColorTemplates.pastel()
+        
+    }
 
 }
 

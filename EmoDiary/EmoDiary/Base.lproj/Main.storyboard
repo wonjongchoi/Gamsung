@@ -328,10 +328,11 @@
                                     <outlet property="delegate" destination="8rJ-Kc-sve" id="4tY-aq-gGP"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="lineChartView" translatesAutoresizingMaskIntoConstraints="NO" id="PMc-kc-oON" userLabel="Line Chart View" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="376" width="375" height="170"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="lineChartView" translatesAutoresizingMaskIntoConstraints="NO" id="LfR-3c-xif" userLabel="Line Chart View" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="356" width="375" height="198"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration" identifier="lineChartView"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -362,7 +363,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="calendar" destination="m2F-Ec-aqT" id="xin-l2-KBf"/>
-                        <outlet property="lineChartView" destination="PMc-kc-oON" id="CZV-P0-M7i"/>
+                        <outlet property="lineChartView" destination="LfR-3c-xif" id="vpX-5Z-o1n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -579,7 +580,7 @@
         <scene sceneID="bLs-tw-wAd">
             <objects>
                 <tableViewController id="tb9-mV-3d8" userLabel="Color Value Setting" customClass="ColorValueTableController" customModule="EmoDiary" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" id="zA1-xM-ISH">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" id="zA1-xM-ISH">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

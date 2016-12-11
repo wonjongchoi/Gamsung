@@ -12,6 +12,8 @@ import Charts
 class StatisticsViewController: UIViewController {
     @IBOutlet weak var pieChartView: PieChartView!
     @IBOutlet weak var barChartView: BarChartView!
+    
+    let emoIndexArr = [EmotionIndex.fun, EmotionIndex.happy, EmotionIndex.love, EmotionIndex.relieved, EmotionIndex.calm, EmotionIndex.feelingless, EmotionIndex.shame, EmotionIndex.lonely, EmotionIndex.sad, EmotionIndex.anger]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,14 +22,15 @@ class StatisticsViewController: UIViewController {
 
         self.tabBarController?.tabBar.isHidden = false
     
-        let DummyIndex = ["행복","사랑","후련", "재미", "분노", "우울", "외로움", "자괴감", "침착", "애매"]
-        let DummyEmo = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 5.0, 10.0, 7.0, 13.0]
+        //let DummyIndex = ["행복","사랑","후련", "재미", "분노", "우울", "외로움", "자괴감", "침착", "애매"]
+        //let DummyEmo = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 5.0, 10.0, 7.0, 13.0]
         
-        setChart(dataPoints: DummyIndex, values : DummyEmo)
+        setChart()
 
      }
     
-    func setChart(dataPoints: [String], values: [Double]) {
+    func setChart() {
+        var values:Array<Double> = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 5.0, 10.0, 7.0, 13.0]
         
         var dataEntries: [ChartDataEntry] = Array()
         var bardataSet: ChartDataSet!
@@ -50,7 +53,7 @@ class StatisticsViewController: UIViewController {
 //        barChartView.rightAxis.axisMinimum = 0.0
         barChartView.data = bardata
         
-        bardataSet.colors = ChartColorTemplates.pastel()
+//        bardataSet.colors = ChartColorTemplates.pastel()
 
         
         piedataSet = PieChartDataSet(values: dataEntries, label: "Emotion Statistics")
@@ -58,7 +61,15 @@ class StatisticsViewController: UIViewController {
         let piedata = PieChartData(dataSet: piedataSet)
         pieChartView.data = piedata
         
-        piedataSet.colors = ChartColorTemplates.pastel()
+//        piedataSet.colors = ChartColorTemplates.pastel()
+        
+        bardataSet.colors.removeAll()
+        piedataSet.colors.removeAll()
+        
+        for emoIndex in emoIndexArr {
+            bardataSet.colors.append(hexStringToUIColor(hex: (emoArray[emoIndex]?.resource)!))
+            piedataSet.colors.append(hexStringToUIColor(hex: (emoArray[emoIndex]?.resource)!))
+        }
         
         //var colors: [UIColor] = []
 //        lineChartDataSet.colors = ChartColorTemplates.pastel()
