@@ -119,7 +119,6 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
     
     func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
         self.calendar.frame.size.height = bounds.height
-        //self.eventLabel.frame.origin.y = calendar.frame.maxY + 10
     }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date) {
@@ -172,6 +171,7 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
         lineChartView.legend.enabled = false
         lineChartView.xAxis.labelPosition = .bottom
         lineChartView.rightAxis.drawLabelsEnabled = false
+        lineChartView.leftAxis.drawZeroLineEnabled = true
         
         lineChartView.xAxis.valueFormatter = DefaultAxisValueFormatter(block: {(index, _) in
             return indexArr[Int(index)]
@@ -203,6 +203,7 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
         linedataSet.colors = [UIColor.darkGray]
         linedataSet.formLineWidth = 3.0
         linedataSet.valueFont = UIFont.boldSystemFont(ofSize: 10)
+        linedataSet.drawValuesEnabled = false
     }
 
 }

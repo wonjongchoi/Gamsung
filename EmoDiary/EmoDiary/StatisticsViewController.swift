@@ -38,8 +38,6 @@ class StatisticsViewController: UIViewController {
     
     let emoIndexArr = [EmotionIndex.fun, EmotionIndex.happy, EmotionIndex.love, EmotionIndex.relieved, EmotionIndex.calm, EmotionIndex.feelingless, EmotionIndex.shame, EmotionIndex.lonely, EmotionIndex.sad, EmotionIndex.anger]
     
-    var values:Array<Double> = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,9 +54,14 @@ class StatisticsViewController: UIViewController {
     
     func setChart(datatype : Int) {
         var dataEntries: [ChartDataEntry] = Array()
-//        var pie_dataEntries: [ChartDataEntry] = Array()
+        var pieEntries: [ChartDataEntry] = Array()
         var bardataSet: ChartDataSet!
         var piedataSet: ChartDataSet!
+        
+        var pieColorIndex:Array<EmotionIndex> = []
+        var pieValues:Array<Double> = []
+        
+        var barValues:Array<Double> = []
         
         var day:Int = 7
         
@@ -70,24 +73,29 @@ class StatisticsViewController: UIViewController {
             day = 365
         }
         
-        values.removeAll()
+        barValues.removeAll()
+        pieValues.removeAll()
         
         for emoIndex in emoIndexArr {
-            values.append(Double(selectCountEmo(emoIndex: emoIndex, day: day)))
+            let value = selectCountEmo(emoIndex: emoIndex, day: day)
+            barValues.append(Double(value))
+            
+            if (value != 0) {
+                pieValues.append(Double(value))
+                pieColorIndex.append(emoIndex)
+            }
         }
         
-        for (i, value) in values.enumerated()
+        for (i, value) in barValues.enumerated()
         {
             dataEntries.append(BarChartDataEntry(x: Double(i), y: value))
             print(dataEntries)
             
         }
         
-//        for (i, element) in dataEntries.enumerated() {
-//            if(element != "") {
-//                pie_dataEntries.append(BarChartDataEntry(x: Double(i), y : element))
-//            }
-//        }
+        for value in pieValues {
+            pieEntries.append(PieChartDataEntry(value: Double(value)))
+        }
         
         bardataSet = BarChartDataSet(values: dataEntries, label: "Emotion Statistics")
         
@@ -97,13 +105,14 @@ class StatisticsViewController: UIViewController {
         barChartView.data = bardata
         barChartView.doubleTapToZoomEnabled = false
         
-        piedataSet = PieChartDataSet(values: dataEntries, label: "Emotion Statistics")
-        pieChartView.descriptionText = " "
+        piedataSet = PieChartDataSet(values: pieEntries, label: "Emotion Statistics")
         pieChartView.legend.enabled = false
 
         
         let piedata = PieChartData(dataSet: piedataSet)
         pieChartView.data = piedata
+        pieChartView.usePercentValuesEnabled = true
+        pieChartView.descriptionText = " "
         
         var indexArr:Array<String> = [] //for barchart index
         
@@ -112,9 +121,12 @@ class StatisticsViewController: UIViewController {
         
         for emoIndex in emoIndexArr {
             bardataSet.colors.append(hexStringToUIColor(hex: (emoArray[emoIndex]?.resource)!))
-            piedataSet.colors.append(hexStringToUIColor(hex: (emoArray[emoIndex]?.resource)!))
             
             indexArr.append((emoArray[emoIndex]?.name)!)
+        }
+        
+        for emoIndex in pieColorIndex {
+            piedataSet.colors.append(hexStringToUIColor(hex: (emoArray[emoIndex]?.resource)!))
         }
         
         for element in indexArr {
