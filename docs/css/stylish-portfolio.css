@@ -166,6 +166,8 @@ hr.small {
 
 .about {
     padding: 50px 0;
+    width: 100%;
+    height: 100%;
 }
 
 /* Services */
@@ -302,4 +304,13 @@ footer {
   position: fixed;
   bottom: 5px;
   right: 5px;
+}
+
+/* Video */
+
+.video {
+    background-color:black;
+    padding: 5px 0;
+    width: 100%;
+    height: 100%;
 }
