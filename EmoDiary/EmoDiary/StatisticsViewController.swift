@@ -83,14 +83,22 @@ class StatisticsViewController: UIViewController {
         bardataSet = BarChartDataSet(values: dataEntries, label: "Emotion Statistics")
         
         let bardata = BarChartData(dataSet: bardataSet)
-        bardata.barWidth = 0.85
-        
+        //bardata.barWidth = 0.85
+       
         barChartView.data = bardata
+        barChartView.doubleTapToZoomEnabled = false
         
         piedataSet = PieChartDataSet(values: dataEntries, label: "Emotion Statistics")
+        pieChartView.descriptionText = " "
+        pieChartView.legend.enabled = false
+
         
         let piedata = PieChartData(dataSet: piedataSet)
         pieChartView.data = piedata
+
+//        piedataSet.colors = ChartColorTemplates.pastel()
+        
+        var indexArr:Array<String> = [] //for barchart index
         
         bardataSet.colors.removeAll()
         piedataSet.colors.removeAll()
@@ -98,7 +106,31 @@ class StatisticsViewController: UIViewController {
         for emoIndex in emoIndexArr {
             bardataSet.colors.append(hexStringToUIColor(hex: (emoArray[emoIndex]?.resource)!))
             piedataSet.colors.append(hexStringToUIColor(hex: (emoArray[emoIndex]?.resource)!))
+            
+            indexArr.append((emoArray[emoIndex]?.name)!)
         }
+        
+        for element in indexArr {
+            print(element)
+        }
+//
+//        var axisLabelModulus = Int(1)
+//        var _isAxisModulusCustom = false
+        
+        barChartView.xAxis.labelPosition = .bottom
+        barChartView.rightAxis.drawLabelsEnabled = false
+        barChartView.descriptionText = ""
+        barChartView.legend.enabled = false
+        barChartView.animate(xAxisDuration: 1.5, yAxisDuration: 1.5)
+
+        
+        barChartView.xAxis.valueFormatter = DefaultAxisValueFormatter(block: {(index, _) in
+            return indexArr[Int(index)]
+        })
+        
+        barChartView.xAxis.setLabelCount(indexArr.count, force: false)
+        
+        //barChartView.xAxis.granularity = 1.0
         
     }
     

@@ -24,6 +24,9 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
         }
     }
     
+    let emoIndexArr = [EmotionIndex.fun, EmotionIndex.happy, EmotionIndex.love, EmotionIndex.relieved, EmotionIndex.calm, EmotionIndex.feelingless, EmotionIndex.shame, EmotionIndex.lonely, EmotionIndex.sad, EmotionIndex.anger]
+
+    
     private let gregorian = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)!
     private let formatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -223,12 +226,37 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
         }
         
         linedataSet = LineChartDataSet(values: dataEntries, label: "Emotion Statistics")
+        lineChartView.descriptionText = ""
+        lineChartView.legend.enabled = false
+        lineChartView.xAxis.labelPosition = .bottom
+        lineChartView.rightAxis.drawLabelsEnabled = false
+
+        var indexArr:Array<String> = [] //for barchart index
+        
+        for emoIndex in emoIndexArr {
+            
+            indexArr.append((emoArray[emoIndex]?.name)!)
+        }
+        
+        lineChartView.xAxis.valueFormatter = DefaultAxisValueFormatter(block: {(index, _) in
+            return indexArr[Int(index)]
+        })
+        
+        lineChartView.xAxis.setLabelCount(indexArr.count, force: true)
         
         let linedata = LineChartData(dataSet: linedataSet)
         
         self.lineChartView.data = linedata
         
-        linedataSet.colors = ChartColorTemplates.pastel()
+        linedataSet.colors = [UIColor.darkGray]
+        linedataSet.formLineWidth = 3.0
+        linedataSet.valueFont = UIFont.boldSystemFont(ofSize: 10)
+   
+//        linedataSet.fo
+
+
+        
+        //linedataSet.colors = ChartColorTemplates.pastel()
         
     }
 
