@@ -104,8 +104,6 @@ class StatisticsViewController: UIViewController {
         
         let piedata = PieChartData(dataSet: piedataSet)
         pieChartView.data = piedata
-
-//        piedataSet.colors = ChartColorTemplates.pastel()
         
         var indexArr:Array<String> = [] //for barchart index
         
@@ -122,9 +120,6 @@ class StatisticsViewController: UIViewController {
         for element in indexArr {
             print(element)
         }
-//
-//        var axisLabelModulus = Int(1)
-//        var _isAxisModulusCustom = false
         
         barChartView.xAxis.labelPosition = .bottom
         barChartView.rightAxis.drawLabelsEnabled = false
@@ -136,7 +131,6 @@ class StatisticsViewController: UIViewController {
         
         barChartView.animate(xAxisDuration: 1.5, yAxisDuration: 1.5)
 
-        
         barChartView.xAxis.valueFormatter = DefaultAxisValueFormatter(block: {(index, _) in
             return indexArr[Int(index)]
         })

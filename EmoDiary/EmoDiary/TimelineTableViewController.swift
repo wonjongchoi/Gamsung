@@ -70,13 +70,6 @@ class TimelineTableViewController: UITableViewController {
         
         dateFormatter.dateFormat = "yyyy-MM-dd"
         
-//        cell.memoLabel.frame = CGRect(x : 20, y : 0, width: cell.memoLabel.frame.width, height : cell.memoLabel.frame.height) //.frame = CGRectMake(0,0,100,100)
-//        
-//        cell.memoLabel.layoutMargins.left = 20
-//        cell.memoLabel.layoutMargins.right = 20
-//        cell.timeLabel.layoutMargins.left = 20
-//        cell.timeLabel.layoutMargins.right = 20
-        
         if (row != 0 && cal.dateComponents([Calendar.Component.day], from: ctime) == cal.dateComponents([Calendar.Component.day], from: self.journal[row - 1].ctime)) {
             cell.dateLabel.text = dateFormatter.string(from: ctime)
             cell.dateLabel.isHidden = true

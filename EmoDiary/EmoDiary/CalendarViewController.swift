@@ -63,10 +63,7 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
         
         self.journal = selectAllJournal()
         
-        let DummyIndex = ["행복","사랑","후련", "재미", "분노", "우울", "외로움", "자괴감", "침착", "애매"]
-        let DummyEmo = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 5.0, 10.0, 7.0, 13.0]
-        
-        setChart(dataPoints: DummyIndex, values: DummyEmo)
+        setChart()
         
         calendar.calendarHeaderView.backgroundColor = UIColor.white
         calendar.calendarWeekdayView.backgroundColor = UIColor.white
@@ -151,78 +148,23 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
         diyCell.imageView.isHidden = !self.gregorian.isDateInToday(date as Date)
         
         diyCell.eventIndicator.color = calendar(calendar, appearance: calendar.appearance, eventDefaultColorsFor: date as Date)
-        
-//        print(diyCell.eventIndicator.)
-//        diyCell.eventIndicator.color =
-        // Configure selection layer
-//        if position == .current || calendar.scope == .week {
-//            
-//            diyCell.eventIndicator.isHidden = false
-//            
-//            var selectionType = SelectionType.none
-//            
-//            if calendar.selectedDates.contains(date as Date) {
-//                let previousDate = self.gregorian.date(byAdding: .day, value: -1, to: date as Date, options: NSCalendar.Options.init(rawValue: 0))!
-//                let nextDate = self.gregorian.date(byAdding: .day, value: 1, to: date as Date, options: NSCalendar.Options.init(rawValue: 0))!
-//                if calendar.selectedDates.contains(date as Date) {
-//                    if calendar.selectedDates.contains(previousDate) && calendar.selectedDates.contains(nextDate) {
-//                        selectionType = .middle
-//                    }
-//                    else if calendar.selectedDates.contains(previousDate) && calendar.selectedDates.contains(date as Date) {
-//                        selectionType = .rightBorder
-//                    }
-//                    else if calendar.selectedDates.contains(nextDate) {
-//                        selectionType = .leftBorder
-//                    }
-//                    else {
-//                        selectionType = .single
-//                    }
-//                }
-//            }
-//            else {
-//                selectionType = .none
-//            }
-//            if selectionType == .none {
-//                diyCell.shapeLayer.isHidden = true
-//                return
-//            }
-//            
-//            diyCell.shapeLayer.isHidden = false
-//            if selectionType == .middle {
-//                diyCell.shapeLayer.path = UIBezierPath(rect: diyCell.shapeLayer.bounds).cgPath
-//            }
-//            else if selectionType == .leftBorder {
-//                diyCell.shapeLayer.path = UIBezierPath(roundedRect: diyCell.shapeLayer.bounds, byRoundingCorners: [.topLeft, .bottomLeft], cornerRadii: CGSize(width: diyCell.shapeLayer.frame.width / 2, height: diyCell.shapeLayer.frame.width / 2)).cgPath
-//            }
-//            else if selectionType == .rightBorder {
-//                diyCell.shapeLayer.path = UIBezierPath(roundedRect: diyCell.shapeLayer.bounds, byRoundingCorners: [.topRight, .bottomRight], cornerRadii: CGSize(width: diyCell.shapeLayer.frame.width / 2, height: diyCell.shapeLayer.frame.width / 2)).cgPath
-//            }
-//            else if selectionType == .single {
-//                let diameter: CGFloat = min(diyCell.shapeLayer.frame.height, diyCell.shapeLayer.frame.width)
-//                diyCell.shapeLayer.path = UIBezierPath(ovalIn: CGRect(x: diyCell.contentView.frame.width / 2 - diameter / 2, y: diyCell.contentView.frame.height / 2 - diameter / 2, width: diameter, height: diameter)).cgPath
-//            }
-//            
-//        }
-//        else if position == .next || position == .previous {
-//            diyCell.imageView.isHidden = true
-//            diyCell.shapeLayer.isHidden = true
-//            diyCell.eventIndicator.isHidden = true
-//            // Hide default event indicator
-//            if self.calendar.selectedDates.contains(date as Date) {
-//                diyCell.titleLabel!.textColor = self.calendar.appearance.titlePlaceholderColor
-//                // Prevent placeholders from changing text color
-//            }
-//        }
     }
     
-    func setChart(dataPoints: [String], values: [Double]) {
+    func setChart() {
+        var chartJournal = selectRecentJournal().reversed()
+        var indexArr:Array<String> = [] //for barchart index
         
         var dataEntries: [ChartDataEntry] = Array()
-        var linedataSet: ChartDataSet!
+        var linedataSet: LineChartDataSet!
         
-        for (i, value) in values.enumerated()
+        var dateFormatter:DateFormatter = DateFormatter()
+        
+        dateFormatter.dateFormat = "MM/dd"
+        
+        for (i, journal) in chartJournal.enumerated()
         {
-            dataEntries.append(ChartDataEntry(x: Double(i), y: value))
+            dataEntries.append(ChartDataEntry(x: Double(i), y: Double((emoArray[journal.emotion]?.value)!)))
+            indexArr.append(dateFormatter.string(from: journal.ctime))
         }
         
         linedataSet = LineChartDataSet(values: dataEntries, label: "Emotion Statistics")
@@ -230,16 +172,21 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
         lineChartView.legend.enabled = false
         lineChartView.xAxis.labelPosition = .bottom
         lineChartView.rightAxis.drawLabelsEnabled = false
-
-        var indexArr:Array<String> = [] //for barchart index
-        
-        for emoIndex in emoIndexArr {
-            
-            indexArr.append((emoArray[emoIndex]?.name)!)
-        }
         
         lineChartView.xAxis.valueFormatter = DefaultAxisValueFormatter(block: {(index, _) in
             return indexArr[Int(index)]
+        })
+        
+        var yIndexArr:Dictionary<Int, String> = [0: "침착/애매"]
+        
+        for emotion in emoArray {
+            if emotion.value.value != 0 {
+                yIndexArr[emotion.value.value] = emotion.value.name
+            }
+        }
+        
+        lineChartView.leftAxis.valueFormatter = DefaultAxisValueFormatter(block: {(index, _) in
+            return yIndexArr[Int(index)]!
         })
         
         lineChartView.xAxis.setLabelCount(indexArr.count, force: true)
@@ -247,17 +194,15 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
         let linedata = LineChartData(dataSet: linedataSet)
         
         self.lineChartView.data = linedata
+        linedataSet.circleColors.removeAll()
+        
+        for journal in chartJournal {
+            linedataSet.circleColors.append(hexStringToUIColor(hex: (emoArray[journal.emotion]?.resource)!))
+        }
         
         linedataSet.colors = [UIColor.darkGray]
         linedataSet.formLineWidth = 3.0
         linedataSet.valueFont = UIFont.boldSystemFont(ofSize: 10)
-   
-//        linedataSet.fo
-
-
-        
-        //linedataSet.colors = ChartColorTemplates.pastel()
-        
     }
 
 }

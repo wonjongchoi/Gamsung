@@ -13,11 +13,10 @@ class ColorValueTableController: UITableViewController {
     @IBOutlet var positiveSliders: [UISlider]!
     @IBOutlet var negativeSliders: [UISlider]!
 
-    
     @IBAction func setSliderAction(_ sender: UISlider) {
         sender.setValue(Float(lroundf(sender.value)), animated: true)
     }
-    //@IBAction
+
     func saveColorValue(_ sender: UIBarButtonItem) {
         var values:Array<Int> = []
         

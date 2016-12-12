@@ -99,6 +99,35 @@ func selectCountEmo(emoIndex: EmotionIndex, day: Int) -> Int {
     return count
 }
 
+func selectRecentJournal() -> Array<Journal> {
+    var resultArr:Array<Journal> = []
+    
+    let journalDB = FMDatabase(path: databasePath as String)
+    
+    if (journalDB?.open())! {
+        print("SELECT ALL TUPLES FROM JOURNAL")
+        
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateFormat = "YYYY-MM-dd HH:mm:SS"
+        
+        let selectSQL = "SELECT jid, ctime, memo, emo_index FROM JOURNAL ORDER BY ctime DESC LIMIT 10"
+        
+        let result:FMResultSet = (journalDB?.executeQuery(selectSQL, withArgumentsIn: nil))!
+        
+        while result.next() {
+            
+            resultArr.append(Journal(jid: Int(result.int(forColumn: "jid")), ctime: dateFormatter.date(from: result.string(forColumn: "ctime"))!, memo: result.string(forColumn: "memo"), emotion: EmotionIndex(rawValue: Int(result.int(forColumn: "emo_index")))!))
+        }
+        
+        journalDB?.close()
+    } else {
+        print("journal.db Open Error : \(journalDB?.lastErrorMessage())")
+    }
+    
+    return resultArr
+}
+
 func selectAllJournal() -> Array<Journal> {
     var resultArr:Array<Journal> = []
     
