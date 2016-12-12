@@ -20,12 +20,15 @@ class StatisticsViewController: UIViewController {
             
         case 0 :
             print("0")
+            setChart(datatype: 0)   //week chart
             break
         case 1:
             print("1")
+            setChart(datatype: 1)   //month chart
             break
         case 2:
             print("2")
+            setChart(datatype: 2)   //year chart
             break
         default:
             print("0")
@@ -39,6 +42,8 @@ class StatisticsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        var datatype:Int
+        
         self.navigationItem.title = "Statistics"
 
         self.tabBarController?.tabBar.isHidden = false
@@ -46,16 +51,27 @@ class StatisticsViewController: UIViewController {
         //let DummyIndex = ["행복","사랑","후련", "재미", "분노", "우울", "외로움", "자괴감", "침착", "애매"]
         //let DummyEmo = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 5.0, 10.0, 7.0, 13.0]
         
-        setChart()
+        setChart(datatype: 0)   //default : week chart
 
      }
     
-    func setChart() {
+    func setChart(datatype : Int) {
         var values:Array<Double> = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 5.0, 10.0, 7.0, 13.0]
         
         var dataEntries: [ChartDataEntry] = Array()
         var bardataSet: ChartDataSet!
         var piedataSet: ChartDataSet!
+        
+        if datatype == 0 {
+            //week dataset
+        } else if datatype == 1 {
+            //month dataset
+        } else if datatype == 2 {
+            //year dataset
+        } else {
+            
+        }
+        
         
         for (i, value) in values.enumerated()
         {
