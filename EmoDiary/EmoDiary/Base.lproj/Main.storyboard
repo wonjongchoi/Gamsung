@@ -55,7 +55,7 @@
                         <viewControllerLayoutGuide type="top" id="lqI-OB-9dK"/>
                         <viewControllerLayoutGuide type="bottom" id="Cvn-gz-h1G"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="g19-fV-f1t">
+                    <view key="view" contentMode="scaleToFill" id="g19-fV-f1t" customClass="UIScrollView">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -75,7 +75,7 @@
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                             </stackView>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7hP-rl-oJ6">
-                                <rect key="frame" x="28" y="240" width="50" height="50"/>
+                                <rect key="frame" x="22" y="240" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="사랑">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -85,7 +85,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urG-BW-VM9">
-                                <rect key="frame" x="95" y="240" width="50" height="50"/>
+                                <rect key="frame" x="92" y="240" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="외로움">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -95,7 +95,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsS-12-XBR">
-                                <rect key="frame" x="298" y="240" width="50" height="50"/>
+                                <rect key="frame" x="302" y="240" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="침착">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -105,7 +105,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wm7-nF-gJC">
-                                <rect key="frame" x="230" y="240" width="50" height="50"/>
+                                <rect key="frame" x="232" y="240" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="후련">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -125,7 +125,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aCB-qi-Dui">
-                                <rect key="frame" x="28" y="308" width="50" height="50"/>
+                                <rect key="frame" x="22" y="310" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="자괴">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -135,7 +135,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efC-tc-BXU">
-                                <rect key="frame" x="95" y="308" width="50" height="50"/>
+                                <rect key="frame" x="92" y="310" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="재미">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -144,18 +144,8 @@
                                     <action selector="pickEmotion:" destination="5tx-X4-sjU" eventType="touchUpInside" id="fDI-9H-bmt"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nV-u4-SW8">
-                                <rect key="frame" x="298" y="308" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="애매">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="pickEmotion:" destination="5tx-X4-sjU" eventType="touchUpInside" id="b3B-PF-ML9"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0V-CX-OQI">
-                                <rect key="frame" x="230" y="308" width="50" height="50"/>
+                                <rect key="frame" x="232" y="310" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="분노">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -165,7 +155,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EqM-AJ-TqJ">
-                                <rect key="frame" x="162" y="308" width="50" height="50"/>
+                                <rect key="frame" x="162" y="310" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="행복">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -175,12 +165,22 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="내용을 입력해주세요." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="abw-c2-cm7">
-                                <rect key="frame" x="28" y="400" width="320" height="30"/>
+                                <rect key="frame" x="27" y="444" width="320" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="no"/>
                             </textField>
+                            <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nV-u4-SW8">
+                                <rect key="frame" x="302" y="310" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="애매">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pickEmotion:" destination="5tx-X4-sjU" eventType="touchUpInside" id="b3B-PF-ML9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -192,18 +192,19 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="anger" destination="e0V-CX-OQI" id="LdZ-9E-5ng"/>
-                        <outlet property="calm" destination="tsS-12-XBR" id="nC6-xk-kvX"/>
                         <outlet property="datePicker" destination="b14-iQ-sxj" id="brV-0i-x39"/>
-                        <outlet property="feelingless" destination="4nV-u4-SW8" id="M5G-c1-Rj1"/>
-                        <outlet property="fun" destination="efC-tc-BXU" id="0aM-eb-xBB"/>
-                        <outlet property="happy" destination="EqM-AJ-TqJ" id="oh0-y7-bqJ"/>
                         <outlet property="inputMemo" destination="abw-c2-cm7" id="Qo4-Nb-AcA"/>
-                        <outlet property="lonely" destination="urG-BW-VM9" id="nxw-Py-Npb"/>
-                        <outlet property="love" destination="7hP-rl-oJ6" id="CgD-mk-C79"/>
-                        <outlet property="relieved" destination="Wm7-nF-gJC" id="Vpf-bH-Qew"/>
-                        <outlet property="sad" destination="vNX-Qe-F12" id="7Xu-1j-rAo"/>
-                        <outlet property="shame" destination="aCB-qi-Dui" id="1hV-n2-tm9"/>
+                        <outlet property="scroll" destination="g19-fV-f1t" id="vsa-5l-WDH"/>
+                        <outletCollection property="colorBtns" destination="7hP-rl-oJ6" collectionClass="NSMutableArray" id="k7m-XQ-WqR"/>
+                        <outletCollection property="colorBtns" destination="urG-BW-VM9" collectionClass="NSMutableArray" id="Xyv-ab-OQe"/>
+                        <outletCollection property="colorBtns" destination="tsS-12-XBR" collectionClass="NSMutableArray" id="UVv-5r-QO8"/>
+                        <outletCollection property="colorBtns" destination="Wm7-nF-gJC" collectionClass="NSMutableArray" id="XZT-kt-QOA"/>
+                        <outletCollection property="colorBtns" destination="vNX-Qe-F12" collectionClass="NSMutableArray" id="USG-0M-Lak"/>
+                        <outletCollection property="colorBtns" destination="aCB-qi-Dui" collectionClass="NSMutableArray" id="tvo-Fc-I5d"/>
+                        <outletCollection property="colorBtns" destination="efC-tc-BXU" collectionClass="NSMutableArray" id="dCT-o0-6GX"/>
+                        <outletCollection property="colorBtns" destination="4nV-u4-SW8" collectionClass="NSMutableArray" id="dop-mk-Id1"/>
+                        <outletCollection property="colorBtns" destination="e0V-CX-OQI" collectionClass="NSMutableArray" id="79Z-kG-lTL"/>
+                        <outletCollection property="colorBtns" destination="EqM-AJ-TqJ" collectionClass="NSMutableArray" id="iBh-au-Sty"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6dz-4B-tu5" userLabel="First Responder" sceneMemberID="firstResponder"/>
