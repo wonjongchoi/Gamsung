@@ -13,7 +13,28 @@ class StatisticsViewController: UIViewController {
     @IBOutlet weak var pieChartView: PieChartView!
     @IBOutlet weak var barChartView: BarChartView!
     
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
+    @IBAction func indexChanged(_ sender: UISegmentedControl) {
+        switch segmentedControl.selectedSegmentIndex {
+            
+        case 0 :
+            print("0")
+            break
+        case 1:
+            print("1")
+            break
+        case 2:
+            print("2")
+            break
+        default:
+            print("0")
+            break
+        }
+    }
+    
     let emoIndexArr = [EmotionIndex.fun, EmotionIndex.happy, EmotionIndex.love, EmotionIndex.relieved, EmotionIndex.calm, EmotionIndex.feelingless, EmotionIndex.shame, EmotionIndex.lonely, EmotionIndex.sad, EmotionIndex.anger]
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

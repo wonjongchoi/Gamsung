@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -496,16 +496,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="barChartView" translatesAutoresizingMaskIntoConstraints="NO" id="Nv9-Mp-vi7" userLabel="Bar Chart View" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="8" y="2" width="359" height="268"/>
+                                <rect key="frame" x="8" y="44" width="359" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <accessibility key="accessibilityConfiguration" identifier="barChartView"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="pieChartView" translatesAutoresizingMaskIntoConstraints="NO" id="LJC-au-b8B" userLabel="Pie Chart View" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="278" width="375" height="268"/>
+                                <rect key="frame" x="0.0" y="295" width="375" height="251"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Yhi-xA-5pt">
+                                <rect key="frame" x="154" y="8" width="213" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Week"/>
+                                    <segment title="Month"/>
+                                    <segment title="Year"/>
+                                </segments>
+                                <connections>
+                                    <action selector="indexChanged:" destination="KPV-1j-XIt" eventType="valueChanged" id="pgf-KM-72D"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -519,6 +531,7 @@
                     <connections>
                         <outlet property="barChartView" destination="Nv9-Mp-vi7" id="FrO-oz-Fv8"/>
                         <outlet property="pieChartView" destination="LJC-au-b8B" id="JlS-R0-gwa"/>
+                        <outlet property="segmentedControl" destination="Yhi-xA-5pt" id="hO5-rG-tSF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jgw-lj-G60" userLabel="First Responder" sceneMemberID="firstResponder"/>
