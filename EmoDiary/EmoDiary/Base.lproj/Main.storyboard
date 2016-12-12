@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -679,7 +679,7 @@
                                                 <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zMl-rk-TYY">
                                                     <rect key="frame" x="14" y="4" width="40" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="0.82352941176470584" green="0.93333333333333335" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.61568627450980395" green="0.85882352941176465" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal" title="후련">
                                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
@@ -701,7 +701,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9br-lz-SQN">
                                                     <rect key="frame" x="14" y="4" width="40" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="0.88235294117647056" green="0.96862745098039216" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.70980392156862748" green="0.93333333333333335" blue="0.63137254901960782" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal" title="침착">
                                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
@@ -723,7 +723,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tgv-wf-ps5">
                                                     <rect key="frame" x="14" y="4" width="40" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="0.8901960784313725" green="0.86274509803921573" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.7803921568627451" green="0.74117647058823533" blue="0.63529411764705879" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal" title="애매">
                                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
@@ -798,7 +798,7 @@
                                                 <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nDA-Jc-KPQ">
                                                     <rect key="frame" x="14" y="4" width="40" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="0.46274509803921571" green="0.55686274509803924" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.41568627450980394" green="0.5607843137254902" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal" title="우울">
                                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
@@ -823,7 +823,7 @@
                                                 <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T31-Ud-jhk">
                                                     <rect key="frame" x="14" y="4" width="40" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="0.74509803921568629" green="0.36078431372549019" blue="0.36470588235294116" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.68235294117647061" green="0.27843137254901962" blue="0.29411764705882354" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal" title="분노">
                                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
