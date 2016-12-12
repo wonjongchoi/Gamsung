@@ -17,12 +17,12 @@ enum SelectionType : Int {
 }
 
 class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate {
-    private weak var lineChartView: BarChartView!
-//    @IBOutlet weak var lineChartView: LineChartView!{
-//        didSet {
-//            NSLog("LineChartView set to %@", lineChartView);
-//        }
-//    }
+//    private weak var lineChartView: BarChartView!
+    @IBOutlet weak var lineChartView: LineChartView!{
+        didSet {
+            NSLog("LineChartView set to %@", lineChartView);
+        }
+    }
     
     private let gregorian = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)!
     private let formatter: DateFormatter = {
@@ -46,20 +46,51 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
         
         self.tabBarController?.tabBar.isHidden = false
         
-        self.lineChartView = BarChartView.init(frame: CGRect(x: 0, y: 356, width: 375, height: 198))
-        
         let DummyIndex = ["행복","사랑","후련", "재미", "분노", "우울", "외로움", "자괴감", "침착", "애매"]
         let DummyEmo = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 5.0, 10.0, 7.0, 13.0]
         
-//        setChart(dataPoints: DummyIndex, values: DummyEmo)
+        setChart(dataPoints: DummyIndex, values: DummyEmo)
+        
+        
+        let height: CGFloat = UIDevice.current.model.hasPrefix("iPad") ? 450 : 300
+        let calendar = FSCalendar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: height))
+        calendar.dataSource = self
+        calendar.delegate = self
+        calendar.scopeGesture.isEnabled = true
+        view.addSubview(calendar)
+        self.calendar = calendar
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         self.journal = selectAllJournal()
+        
+        calendar.calendarHeaderView.backgroundColor = UIColor.white
+        calendar.calendarWeekdayView.backgroundColor = UIColor.white
+        calendar.appearance.weekdayTextColor = UIColor.black
+        calendar.appearance.eventSelectionColor = UIColor.white
+        calendar.appearance.eventOffset = CGPoint(x: 0, y: -7)
+        calendar.today = nil // Hide the today circle
+        calendar.register(FSCalendarCell.self, forCellReuseIdentifier: "cell")
+        calendar.appearance.todayColor = UIColor.orange
+        calendar.appearance.borderSelectionColor = UIColor.orange
+        calendar.appearance.selectionColor = UIColor.white
+        calendar.appearance.titleSelectionColor = UIColor.black
+        
+        //        calendar.appearance.headerDateFormat = "yyyy MMMM";
+        
+        calendar.appearance.headerDateFormat = "yyyy / MM";
+        calendar.appearance.headerTitleColor = UIColor.black
+        calendar.appearance.headerMinimumDissolvedAlpha = 0.0;
+        
+        calendar.select(Date.init())
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
+        super.viewDidAppear(animated)
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,6 +102,7 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
     @IBAction func returned(segue:UIStoryboardSegue){
     }
     
+    /*
     override func loadView() {
         // In loadView or viewDidLoad
         
@@ -134,6 +166,8 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
 //        self.eventLabel.attributedText = attributedText
         calendar.select(Date.init())
     }
+ */
+    
     
     func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
         let cell = calendar.dequeueReusableCell(withIdentifier: "cell", for: date as Date, at: position)

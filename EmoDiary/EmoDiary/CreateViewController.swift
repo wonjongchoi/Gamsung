@@ -55,6 +55,11 @@ class CreateViewController: UIViewController {
         self.love.setTitleColor(UIColor.black, for: .normal)
         
         datePicker.maximumDate = Date.init()
+        
+
+        NotificationCenter.default.addObserver(self, selector: #selector(CreateViewController.keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(CreateViewController.keyboardWillHide), name: .UIKeyboardWillHide, object: nil)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,6 +73,24 @@ class CreateViewController: UIViewController {
         if (self.isMovingFromParentViewController){
             self.tabBarController?.tabBar.isHidden = false
         }
+    }
+    
+    
+    func keyboardWillShow(_ notification: Notification) {
+        let userInfo = notification.userInfo!
+        
+        let animationDuration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as! Double
+        let keyboardEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        
+        // 스크롤 업 (텍스트 필드를 키보드 제외한 화면의 y 중간까지 스크롤
+        
+    }
+    
+    func keyboardWillHide(_ notification: Notification) {
+        let userInfo = notification.userInfo!
+        
+        //스크롤 다운
+        
     }
     
     func nogadaBtnSet() {
