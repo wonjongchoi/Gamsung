@@ -89,13 +89,13 @@ class CreateViewController: UIViewController {
         var aRect:CGRect = self.view.frame
         aRect.size.height -= keyboardEndFrame.height
         
-        if (!aRect.contains(textFieldOrigin))
-        {
+//        if (!aRect.contains(textFieldOrigin))
+//        {
             //you can add yor desired height how much you want move keypad up, by replacing "textFieldHeight" below
             
             let scrollPoint = CGPoint.init(x: 0.0, y: textFieldOrigin.y - aRect.size.height  + textFieldHeight) //replace textFieldHeight to currentKeyboardSize.height, if you want to move up with more height
             scroll.setContentOffset(scrollPoint, animated: true)
-        }
+//        }
     }
     
     func keyboardWillHide(_ notification: Notification) {

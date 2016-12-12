@@ -56,6 +56,7 @@ class StatisticsViewController: UIViewController {
     
     func setChart(datatype : Int) {
         var dataEntries: [ChartDataEntry] = Array()
+//        var pie_dataEntries: [ChartDataEntry] = Array()
         var bardataSet: ChartDataSet!
         var piedataSet: ChartDataSet!
         
@@ -78,7 +79,15 @@ class StatisticsViewController: UIViewController {
         for (i, value) in values.enumerated()
         {
             dataEntries.append(BarChartDataEntry(x: Double(i), y: value))
+            print(dataEntries)
+            
         }
+        
+//        for (i, element) in dataEntries.enumerated() {
+//            if(element != "") {
+//                pie_dataEntries.append(BarChartDataEntry(x: Double(i), y : element))
+//            }
+//        }
         
         bardataSet = BarChartDataSet(values: dataEntries, label: "Emotion Statistics")
         
@@ -121,6 +130,10 @@ class StatisticsViewController: UIViewController {
         barChartView.rightAxis.drawLabelsEnabled = false
         barChartView.descriptionText = ""
         barChartView.legend.enabled = false
+        barChartView.leftAxis.axisMinimum = 0.0
+        barChartView.rightAxis.axisMinimum = 0.0
+
+        
         barChartView.animate(xAxisDuration: 1.5, yAxisDuration: 1.5)
 
         
@@ -130,7 +143,7 @@ class StatisticsViewController: UIViewController {
         
         barChartView.xAxis.setLabelCount(indexArr.count, force: false)
         
-        //barChartView.xAxis.granularity = 1.0
+        barChartView.xAxis.granularity = 1.0
         
     }
     
