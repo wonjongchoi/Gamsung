@@ -46,12 +46,6 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
         
         self.tabBarController?.tabBar.isHidden = false
         
-        let DummyIndex = ["행복","사랑","후련", "재미", "분노", "우울", "외로움", "자괴감", "침착", "애매"]
-        let DummyEmo = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 5.0, 10.0, 7.0, 13.0]
-        
-        setChart(dataPoints: DummyIndex, values: DummyEmo)
-        
-        
         let height: CGFloat = UIDevice.current.model.hasPrefix("iPad") ? 450 : 300
         let calendar = FSCalendar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: height))
         calendar.dataSource = self
@@ -59,14 +53,17 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
         calendar.scopeGesture.isEnabled = true
         view.addSubview(calendar)
         self.calendar = calendar
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         self.journal = selectAllJournal()
+        
+        let DummyIndex = ["행복","사랑","후련", "재미", "분노", "우울", "외로움", "자괴감", "침착", "애매"]
+        let DummyEmo = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 5.0, 10.0, 7.0, 13.0]
+        
+        setChart(dataPoints: DummyIndex, values: DummyEmo)
         
         calendar.calendarHeaderView.backgroundColor = UIColor.white
         calendar.calendarWeekdayView.backgroundColor = UIColor.white
@@ -80,13 +77,13 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
         calendar.appearance.selectionColor = UIColor.white
         calendar.appearance.titleSelectionColor = UIColor.black
         
-        //        calendar.appearance.headerDateFormat = "yyyy MMMM";
-        
         calendar.appearance.headerDateFormat = "yyyy / MM";
         calendar.appearance.headerTitleColor = UIColor.black
         calendar.appearance.headerMinimumDissolvedAlpha = 0.0;
         
         calendar.select(Date.init())
+        
+        calendar.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -101,73 +98,6 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
     // 2번째 화면에서 이 클래스의 인스턴스로 넘어올 경우 해당함수가 호출된다.
     @IBAction func returned(segue:UIStoryboardSegue){
     }
-    
-    /*
-    override func loadView() {
-        // In loadView or viewDidLoad
-        
-        let view = UIView(frame: UIScreen.main.bounds)
-        view.backgroundColor = UIColor.white
-        self.view = view
-        
-        let height: CGFloat = UIDevice.current.model.hasPrefix("iPad") ? 450 : 300
-        let calendar = FSCalendar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: height))
-        calendar.dataSource = self
-        calendar.delegate = self
-        calendar.scopeGesture.isEnabled = true
-        view.addSubview(calendar)
-        self.calendar = calendar
-        
-        calendar.calendarHeaderView.backgroundColor = UIColor.white
-        calendar.calendarWeekdayView.backgroundColor = UIColor.white
-        calendar.appearance.weekdayTextColor = UIColor.black
-        calendar.appearance.eventSelectionColor = UIColor.white
-        calendar.appearance.eventOffset = CGPoint(x: 0, y: -7)
-        calendar.today = nil // Hide the today circle
-        calendar.register(FSCalendarCell.self, forCellReuseIdentifier: "cell")
-        calendar.appearance.todayColor = UIColor.orange
-        calendar.appearance.borderSelectionColor = UIColor.orange
-        calendar.appearance.selectionColor = UIColor.white
-        calendar.appearance.titleSelectionColor = UIColor.black
-        
-//        calendar.appearance.headerDateFormat = "yyyy MMMM";
-        
-        calendar.appearance.headerDateFormat = "yyyy / MM";
-        calendar.appearance.headerTitleColor = UIColor.black
-        calendar.appearance.headerMinimumDissolvedAlpha = 0.0;
-        
-//        calendar.appearance.eventDefaultColor = hexStringToUIColor(hex: emoArray[EmotionIndex.calm]!.resource)
-        
-//        calendar.clipsToBounds = true // Remove top/bottom line
-        
-//        let colorTop =  hexStringToUIColor(hex: "#18CEE4").cgColor
-//        let colorBottom = hexStringToUIColor(hex: "#ABFFD9").cgColor
-        
-//        let gradientLayer = CAGradientLayer()
-//        gradientLayer.colors = [ colorTop, colorBottom]
-//        gradientLayer.locations = [ 0.0, 1.0]
-//        gradientLayer.frame = calendar.contentView.bounds
-//        calendar.contentView.layer.addSublayer(gradientLayer)
-//        calendar.layer.addSublayer(gradientLayer)
-//        
-//        let label = UILabel(frame: CGRect(x: 0, y: calendar.frame.maxY + 10, width: self.view.frame.size.width, height: 50))
-//        label.textAlignment = .center
-////        label.font = UIFont.preferredFontForTextStyle(.Subheadline)
-//        self.view.addSubview(label)
-//        self.eventLabel = label
-        
-//        let attributedText = NSMutableAttributedString(string: "")
-//        let attatchment = NSTextAttachment()
-//        attatchment.image = UIImage(named: "first")!
-//        attatchment.bounds = CGRect(x: 0, y: -3, width: attatchment.image!.size.width, height: attatchment.image!.size.height)
-//        attributedText.appendAttributedString(NSAttributedString(attachment: attatchment))
-//        attributedText.appendAttributedString(NSAttributedString(string: "  Hey Daily Event  "))
-//        attributedText.appendAttributedString(NSAttributedString(attachment: attatchment))
-//        self.eventLabel.attributedText = attributedText
-        calendar.select(Date.init())
-    }
- */
-    
     
     func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
         let cell = calendar.dequeueReusableCell(withIdentifier: "cell", for: date as Date, at: position)

@@ -71,6 +71,34 @@ func insertJournal(nJournal: Journal) {
     }
 }
 
+func selectCountEmo(emoIndex: EmotionIndex, day: Int) -> Int {
+    var count:Int = 0
+    let journalDB = FMDatabase(path: databasePath as String)
+    
+    if (journalDB?.open())! {
+        print("SELECT ALL TUPLES FROM JOURNAL")
+        
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateFormat = "YYYY-MM-dd HH:mm:SS"
+        
+        let selectSQL = "SELECT count(jid) as count FROM JOURNAL WHERE emo_index = \(emoIndex.rawValue) AND ctime >= DATETIME('now', '-\(day) days') AND ctime <= DATETIME('now', '+1 day')"
+        
+        let result:FMResultSet = (journalDB?.executeQuery(selectSQL, withArgumentsIn: nil))!
+        
+        if result.next() {
+            count = Int(result.int(forColumn: "count"))
+            print("select count : \(count)")
+        }
+        
+        journalDB?.close()
+    } else {
+        print("journal.db Open Error : \(journalDB?.lastErrorMessage())")
+    }
+    
+    return count
+}
+
 func selectAllJournal() -> Array<Journal> {
     var resultArr:Array<Journal> = []
     

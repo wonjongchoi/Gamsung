@@ -38,40 +38,42 @@ class StatisticsViewController: UIViewController {
     
     let emoIndexArr = [EmotionIndex.fun, EmotionIndex.happy, EmotionIndex.love, EmotionIndex.relieved, EmotionIndex.calm, EmotionIndex.feelingless, EmotionIndex.shame, EmotionIndex.lonely, EmotionIndex.sad, EmotionIndex.anger]
     
-
+    var values:Array<Double> = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        var datatype:Int
         
         self.navigationItem.title = "Statistics"
 
         self.tabBarController?.tabBar.isHidden = false
-    
-        //let DummyIndex = ["행복","사랑","후련", "재미", "분노", "우울", "외로움", "자괴감", "침착", "애매"]
-        //let DummyEmo = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 5.0, 10.0, 7.0, 13.0]
-        
-        setChart(datatype: 0)   //default : week chart
-
      }
     
-    func setChart(datatype : Int) {
-        var values:Array<Double> = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 5.0, 10.0, 7.0, 13.0]
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        setChart(datatype: segmentedControl.selectedSegmentIndex)   //default : week chart
+    }
+    
+    func setChart(datatype : Int) {
         var dataEntries: [ChartDataEntry] = Array()
         var bardataSet: ChartDataSet!
         var piedataSet: ChartDataSet!
         
+        var day:Int = 7
+        
         if datatype == 0 {
-            //week dataset
+            day = 7
         } else if datatype == 1 {
-            //month dataset
+            day = 31
         } else if datatype == 2 {
-            //year dataset
-        } else {
-            
+            day = 365
         }
         
+        values.removeAll()
+        
+        for emoIndex in emoIndexArr {
+            values.append(Double(selectCountEmo(emoIndex: emoIndex, day: day)))
+        }
         
         for (i, value) in values.enumerated()
         {
@@ -83,22 +85,12 @@ class StatisticsViewController: UIViewController {
         let bardata = BarChartData(dataSet: bardataSet)
         bardata.barWidth = 0.85
         
-//        self.barChartView = BarChartView(frame: CGRect(x: 0, y: 0, width: 480, height: 350))
-        
-        //barChartView.backgroundColor = NSUIColor.clear
-//        barChartView.leftAxis.axisMinimum = 0.0
-//        barChartView.rightAxis.axisMinimum = 0.0
         barChartView.data = bardata
-        
-//        bardataSet.colors = ChartColorTemplates.pastel()
-
         
         piedataSet = PieChartDataSet(values: dataEntries, label: "Emotion Statistics")
         
         let piedata = PieChartData(dataSet: piedataSet)
         pieChartView.data = piedata
-        
-//        piedataSet.colors = ChartColorTemplates.pastel()
         
         bardataSet.colors.removeAll()
         piedataSet.colors.removeAll()
@@ -107,10 +99,6 @@ class StatisticsViewController: UIViewController {
             bardataSet.colors.append(hexStringToUIColor(hex: (emoArray[emoIndex]?.resource)!))
             piedataSet.colors.append(hexStringToUIColor(hex: (emoArray[emoIndex]?.resource)!))
         }
-        
-        //var colors: [UIColor] = []
-//        lineChartDataSet.colors = ChartColorTemplates.pastel()
-
         
     }
     
