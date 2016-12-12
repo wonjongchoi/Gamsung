@@ -88,6 +88,7 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
         
         calendar.calendarHeaderView.backgroundColor = UIColor.white
         calendar.calendarWeekdayView.backgroundColor = UIColor.white
+        calendar.appearance.weekdayTextColor = UIColor.black
         calendar.appearance.eventSelectionColor = UIColor.white
         calendar.appearance.eventOffset = CGPoint(x: 0, y: -7)
         calendar.today = nil // Hide the today circle
@@ -100,6 +101,7 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
 //        calendar.appearance.headerDateFormat = "yyyy MMMM";
         
         calendar.appearance.headerDateFormat = "yyyy / MM";
+        calendar.appearance.headerTitleColor = UIColor.black
         calendar.appearance.headerMinimumDissolvedAlpha = 0.0;
         
 //        calendar.appearance.eventDefaultColor = hexStringToUIColor(hex: emoArray[EmotionIndex.calm]!.resource)
