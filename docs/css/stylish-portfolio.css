@@ -303,3 +303,9 @@ footer {
   bottom: 5px;
   right: 5px;
 }
+
+/* Video */
+
+.video {
+    background-color:black;
+}
