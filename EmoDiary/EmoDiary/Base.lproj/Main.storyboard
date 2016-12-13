@@ -239,17 +239,20 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KhD-va-aAS">
-                                                    <rect key="frame" x="15" y="19.5" width="174.5" height="59"/>
+                                                    <rect key="frame" x="15" y="19.5" width="175" height="59"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="vHy-uZ-07i">
-                                                            <rect key="frame" x="0.0" y="8.5" width="41.5" height="41.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHJ-iG-7RB">
+                                                            <rect key="frame" x="0.0" y="8.5" width="42" height="42"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" secondItem="vHy-uZ-07i" secondAttribute="height" multiplier="1:1" id="Nfu-jx-iM5"/>
-                                                                <constraint firstAttribute="width" constant="42" id="Y9s-eB-4TC"/>
+                                                                <constraint firstAttribute="width" constant="42" id="73Z-SW-Xfr"/>
+                                                                <constraint firstAttribute="width" secondItem="BHJ-iG-7RB" secondAttribute="height" multiplier="1:1" id="x0a-A5-A3S"/>
                                                             </constraints>
-                                                        </imageView>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="VqQ-QR-TuJ">
-                                                            <rect key="frame" x="49.5" y="9.5" width="125" height="40"/>
+                                                            <rect key="frame" x="50" y="9.5" width="125" height="40"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PM 1:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7X-00-0mo">
                                                                     <rect key="frame" x="20" y="0.0" width="56" height="18"/>
@@ -282,7 +285,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="dateLabel" destination="2Ek-xs-dnx" id="b6l-fr-wwt"/>
-                                    <outlet property="emotionColor" destination="vHy-uZ-07i" id="xef-sC-fna"/>
+                                    <outlet property="emotionColor" destination="BHJ-iG-7RB" id="hPc-lp-yWp"/>
                                     <outlet property="memoLabel" destination="THL-Ai-TqI" id="zEf-cp-e9O"/>
                                     <outlet property="timeLabel" destination="h7X-00-0mo" id="B3p-U8-OWa"/>
                                 </connections>
@@ -311,7 +314,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="lineChartView" translatesAutoresizingMaskIntoConstraints="NO" id="LfR-3c-xif" userLabel="Line Chart View" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="305" width="354" height="241"/>
+                                <rect key="frame" x="16" y="311" width="343" height="217"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <accessibility key="accessibilityConfiguration" identifier="lineChartView"/>

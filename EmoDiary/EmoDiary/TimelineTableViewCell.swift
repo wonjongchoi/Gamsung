@@ -10,7 +10,7 @@ import UIKit
 
 class TimelineTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var emotionColor: UIImageView!
+    @IBOutlet weak var emotionColor: UILabel!
     @IBOutlet weak var memoLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     

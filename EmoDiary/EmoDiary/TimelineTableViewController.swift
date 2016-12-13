@@ -67,6 +67,7 @@ class TimelineTableViewController: UITableViewController {
         
         let emotion = self.journal[row].emotion
         cell.emotionColor.backgroundColor = hexStringToUIColor(hex: (emoArray[emotion]?.resource)!)
+        cell.emotionColor.text = emoArray[emotion]?.name
         
         dateFormatter.dateFormat = "yyyy-MM-dd"
         
