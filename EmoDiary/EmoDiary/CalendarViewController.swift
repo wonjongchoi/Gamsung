@@ -66,9 +66,6 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
         
         self.journal = selectAllJournal()
         
-        self.chartJournal = selectRecentJournal().reversed()
-        setChart()
-        
         calendar.calendarHeaderView.backgroundColor = UIColor.white
         calendar.calendarWeekdayView.backgroundColor = UIColor.white
         calendar.appearance.weekdayTextColor = UIColor.black
@@ -88,6 +85,9 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
         calendar.select(Date.init())
         
         calendar.reloadData()
+        
+        self.chartJournal = selectRecentJournal(date: calendar.selectedDate).reversed()
+        setChart()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -127,6 +127,8 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date) {
         print("did select date \(self.formatter.string(from: date as Date))")
+        self.chartJournal = selectRecentJournal(date: date).reversed()
+        setChart()
         calendar.visibleCells().forEach { (cell) in
             let date = calendar.date(for: cell)
             let position = calendar.monthPosition(for: cell)
