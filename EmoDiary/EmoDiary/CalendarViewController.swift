@@ -184,7 +184,7 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
             return indexArr[Int(index)]
         })
         
-        var yIndexArr:Dictionary<Int, String> = [0: "침착/애매"]
+        var yIndexArr:Dictionary<Int, String> = [0: "침착,애매"]
         
         for emotion in emoArray {
             if emotion.value.value != 0 {
