@@ -16,7 +16,7 @@ enum SelectionType : Int {
     case rightBorder
 }
 
-class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate {
+class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate, ChartViewDelegate {
 //    private weak var lineChartView: BarChartView!
     @IBOutlet weak var lineChartView: LineChartView!{
         didSet {
@@ -37,6 +37,7 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
     private weak var calendar: FSCalendar!
     
     private var journal:Array<Journal> = []
+    private var chartJournal:Array<Journal> = []
     
     @IBAction func goToday(_ sender: UIBarButtonItem) {
         calendar.select(Date.init(), scrollToDate: true)
@@ -56,6 +57,8 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
         calendar.scopeGesture.isEnabled = true
         view.addSubview(calendar)
         self.calendar = calendar
+        
+        lineChartView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -63,6 +66,7 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
         
         self.journal = selectAllJournal()
         
+        self.chartJournal = selectRecentJournal().reversed()
         setChart()
         
         calendar.calendarHeaderView.backgroundColor = UIColor.white
@@ -149,8 +153,11 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
         diyCell.eventIndicator.color = calendar(calendar, appearance: calendar.appearance, eventDefaultColorsFor: date as Date)
     }
     
+    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+        showToast(view: self, msg: chartJournal[Int(entry.x)].memo)
+    }
+    
     func setChart() {
-        var chartJournal = selectRecentJournal().reversed()
         var indexArr:Array<String> = [] //for barchart index
         
         var dataEntries: [ChartDataEntry] = Array()
@@ -205,6 +212,8 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
         linedataSet.valueFont = UIFont.boldSystemFont(ofSize: 10)
         linedataSet.drawValuesEnabled = false
     }
+    
+    
 
 }
 
